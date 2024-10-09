@@ -29,7 +29,8 @@
                 "glob": "**/*",
                 "input": "public",
                 "output": "."
-              }
+              },
+              "src/config"
             ],
             "styles": [
               "src/styles.scss"
@@ -39,6 +40,16 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/config/environment.ts",
+                  "with": "src/config/environment.prod.ts"
+                },
+                {
+                  "replace": "src/config/manifest.dev.json",
+                  "with": "src/config/manifest.prod.json"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",

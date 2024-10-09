@@ -1,0 +1,7 @@
+{
+    "mfe2":{
+        "remoteEntry": "http://localhost:4200/remoteEntry.js",
+        "exposedModule": "./Module",
+        "remoteName": "mfe2"
+    }
+}
