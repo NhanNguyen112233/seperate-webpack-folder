@@ -7,6 +7,22 @@ const mfeRoute: Route[] = [
   {
     path: 'mfe-component',
     component: MfeComponentComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./child-mfe-component/child-mfe-component.module').then(
+            (m) => m.ChildMfeComponentModule
+          ),
+      },
+      {
+        path: '',
+        loadChildren: () =>
+          import(
+            './child-second-mfe-component/child-second-mfe-component.module'
+          ).then((m) => m.SecondChildMfeComponentModule),
+      },
+    ],
   },
 ];
 
