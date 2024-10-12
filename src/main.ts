@@ -3,21 +3,22 @@
 // As this is an async operation we need an async boundary (import())
 
 import { initFederation } from '@angular-architects/module-federation';
-import { enviroment } from './config/enviroment';
+import { enviroment } from '@config/enviroment';
+import { loadManifest } from '@utils/manifest-loader';
 // this is ok
-export async function loadManifest(): Promise<any> {
-  try {
-    const envManifest = enviroment.manifest;
-    const response = await import(`./config/manifest.dev.json`);
+// export async function loadManifest(): Promise<any> {
+//   try {
+//     const envManifest = enviroment.manifest;
+//     const response = await import(`./config/manifest.dev.json`);
 
-    return response.default as {
-      [key: string]: string | any;
-    };
-  } catch (err) {
-    console.error('Error loading manifest', err);
-    throw err;
-  }
-}
+//     return response.default as {
+//       [key: string]: string | any;
+//     };
+//   } catch (err) {
+//     console.error('Error loading manifest', err);
+//     throw err;
+//   }
+// }
 
 // function initInjection() {
 //   let a;
@@ -70,10 +71,9 @@ export async function loadManifest(): Promise<any> {
 
 // this is ok
 
-loadManifest()
-  .then((manifest) => {
-    return initFederation(manifest);
-  })
+loadManifest((manifest) => {
+  return initFederation(manifest);
+})
   .then(() => {
     return import('./boostrap').catch((err) => console.error(err));
   })

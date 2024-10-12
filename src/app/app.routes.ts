@@ -1,24 +1,8 @@
 import { RouterModule, Routes } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { NgModule } from '@angular/core';
-import { AppService, IManifest } from '../service/app-service.service';
-
-export function loadRemoteModuleWithManifest(configKey: string) {
-  return import('../config/manifest.dev.json')
-    .then((manifest) => {
-      const remoteConfig = manifest.default as IManifest;
-      return loadRemoteModule({
-        type: 'manifest',
-        remoteName: remoteConfig[configKey]
-          ? remoteConfig[configKey].remoteName
-          : '',
-        exposedModule: remoteConfig[configKey]
-          ? remoteConfig[configKey].exposedModule
-          : '',
-      });
-    })
-    .catch((e) => console.error(e));
-}
+import { AppService } from '../service/app-service.service';
+import { loadRemoteModuleWithManifest } from '@utils/manifest-loader';
 
 const routes: Routes = [
   {
