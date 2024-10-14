@@ -5,22 +5,22 @@ import { AppService } from '../service/app-service.service';
 import { loadRemoteModuleWithManifest } from '@utils/manifest-loader';
 
 const routes: Routes = [
+  // {
+  //   path: 'mfe2',
+  //   loadChildren: () =>
+  //     loadRemoteModuleWithManifest('mfe2')
+  //       .then((m) => m.MfeComponentModule)
+  //       .catch((err) => console.error('Error loading remote module', err)),
+  // },
   {
     path: 'mfe2',
     loadChildren: () =>
-      loadRemoteModuleWithManifest('mfe2')
-        .then((m) => m.MfeComponentModule)
-        .catch((err) => console.error('Error loading remote module', err)),
-  },
-  {
-    path: 'mfe3',
-    loadChildren: () =>
       loadRemoteModule({
         type: 'module',
-        remoteEntry: 'http://localhost:4201/remoteEntry.js',
-        exposedModule: './ModuleFirst',
+        remoteEntry: 'https://potential-waddle-rw54667j7qwh5r6g-4200.app.github.dev/remoteEntry.js',
+        exposedModule: './Module',
       })
-        .then((m) => m.Mfe2ComponentModule)
+        .then((m) => m.MfeComponentModule)
         .catch((err) => console.error('Error loading remote module', err)),
   },
 ];
