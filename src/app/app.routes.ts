@@ -5,24 +5,35 @@ import { AppService } from '../service/app-service.service';
 import { loadRemoteModuleWithManifest } from '@utils/manifest-loader';
 
 const routes: Routes = [
-  // {
-  //   path: 'mfe2',
-  //   loadChildren: () =>
-  //     loadRemoteModuleWithManifest('mfe2')
-  //       .then((m) => m.MfeComponentModule)
-  //       .catch((err) => console.error('Error loading remote module', err)),
-  // },
   {
     path: 'mfe2',
     loadChildren: () =>
-      loadRemoteModule({
-        type: 'module',
-        remoteEntry: 'https://potential-waddle-rw54667j7qwh5r6g-4200.app.github.dev/remoteEntry.js',
-        exposedModule: './Module',
-      })
+      loadRemoteModuleWithManifest('mfe2')
         .then((m) => m.MfeComponentModule)
         .catch((err) => console.error('Error loading remote module', err)),
   },
+  // {
+  //   path: 'mfe2',
+  //   loadChildren: () =>
+  //     loadRemoteModule({
+  //       type: 'module',
+  //       remoteEntry: 'http://localhost:4200/remoteEntry.js',
+  //       exposedModule: './ModuleFirst',
+  //     })
+  //       .then((m) => m.MfeComponentModule)
+  //       .catch((err) => console.error('Error loading remote module', err)),
+  // },
+  // {
+  //   path: 'mfe2',
+  //   loadChildren: () =>
+  //     loadRemoteModule({
+  //       type: 'module',
+  //       remoteEntry: 'http://localhost:4200/remoteEntry.js',
+  //       exposedModule: './ModuleFirst',
+  //     })
+  //       .then((m) => m.MfeComponentModule)
+  //       .catch((err) => console.error('Error loading remote module', err)),
+  // },
 ];
 
 @NgModule({

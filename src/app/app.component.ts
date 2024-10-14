@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     this.viewEventService()
   }
   loadEventService (){
-    // this.adminCommunicateService.emmitEvent({event:'test',data:'test data'})
+    this.adminCommunicateService.emmitEvent({event:'test',data:'test data'})
   }
 
   viewEventService (){

@@ -14,8 +14,8 @@ module.exports = withModuleFederationPlugin({
       requiredVersion: "auto",
     }),
     "admin-core-web-libs": {
-      singleton: false,
-      strictVersion: false,
+      singleton: true,
+      strictVersion: true,
       requiredVersion: "0.0.1",
     },
   },
