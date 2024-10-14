@@ -1,6 +1,6 @@
 {
     "mfe2":{
-        "remoteEntry": "https://potential-waddle-rw54667j7qwh5r6g-4200.app.github.dev/remoteEntry.js",
+        "remoteEntry": "https://mfe-app-nhan9x.netlify.app/remoteEntry.js",
         "exposedModule": "./Module",
         "remoteName": "mfe2"
     }

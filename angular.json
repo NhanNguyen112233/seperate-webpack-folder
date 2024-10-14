@@ -36,14 +36,15 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "main": "src/main.ts"
+            "main": "src/main.ts",
+            "extraWebpackConfig": "webpack.config.js"
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/config/environment.ts",
-                  "with": "src/config/environment.prod.ts"
+                  "replace": "src/config/enviroment.ts",
+                  "with": "src/config/enviroment.prod.ts"
                 },
                 {
                   "replace": "src/config/manifest.dev.json",
@@ -62,7 +63,8 @@
                   "maximumError": "4kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "extraWebpackConfig": "webpack.config.js"
             },
             "development": {
               "optimization": false,
