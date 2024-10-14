@@ -1,3 +1,5 @@
-<p>mfe -routing container works!</p>
-<button (click)="submitFromMicroApp()">load</button>
+<p>App con container đã hoạt động</p>
+<button (click)="submitFromMicroApp()">Giao tiếp thông qua shared lib và gửi msg event tới app cha</button>
+
+<div *ngIf="loadContent">Event msg được giao tiếp thông qua sharedlib:<span style="color: red;">{{loadContent}}</span></div>
 <router-outlet></router-outlet>
