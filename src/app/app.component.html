@@ -5,21 +5,21 @@
   </p>
   <p>
     <a routerLink="/mfe2/mfe-component"
-      >Load Angular module named MyFeatureModule from mfe1</a
+      >Load MFE 1 app</a
     >
   </p>
 
-  <p>
+  <!-- <p>
     <a routerLink="/mfe3/mfe3-component"
-      >Load </a
+      >Giao tie </a
     >
-  </p>
+  </p> -->
 
-  <button (click)="loadEventService()">load event service</button>
+  <button (click)="loadEventService()">giao tiếp với shared lib và truyển msg tới app con</button>
 
   <!-- <button (click)="viewEventService()">view event service loaded</button> -->
 
 
-  <div>{{loadContent}}</div>
+  <div *ngIf="loadContent">Event msg được giao tiếp thông qua sharedlib:<span style="color: red;">{{loadContent}}</span></div>
   <router-outlet></router-outlet>
 </div>
