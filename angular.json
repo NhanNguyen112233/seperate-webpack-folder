@@ -35,7 +35,8 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "main": "src/main.ts"
+            "main": "src/main.ts",
+            "extraWebpackConfig": "webpack.config.js"
           },
           "configurations": {
             "production": {
@@ -51,13 +52,16 @@
                   "maximumError": "4kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "extraWebpackConfig": "webpack.prod.config.js"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
             }
+          
+
           },
           "defaultConfiguration": "production"
         },
@@ -70,7 +74,8 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "mfe-app:build:production"
+              "buildTarget": "mfe-app:build:production",
+               "extraWebpackConfig": "webpack.prod.config.js"
             },
             "development": {
               "buildTarget": "mfe-app:build:development"

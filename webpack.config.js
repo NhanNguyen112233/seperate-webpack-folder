@@ -3,7 +3,7 @@ const {
   withModuleFederationPlugin,
 } = require("@angular-architects/module-federation/webpack");
 
-module.exports = withModuleFederationPlugin({
+const moduleFederationConfig = withModuleFederationPlugin({
   name: "mfeApp",
   filename: "remoteEntry.js", // this doesn't need to be set, if not specified it defaults to remoteEntry.js. Setting it here just for demo purposes.
   exposes: {
@@ -21,7 +21,10 @@ module.exports = withModuleFederationPlugin({
       requiredVersion: "0.0.1",
     },
   },
+  
 });
+
+module.exports = moduleFederationConfig;
 
 
 
