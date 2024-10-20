@@ -33,7 +33,8 @@
               "src/config"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/admin-core-web-libs/src/lib/styles.scss"
             ],
             "scripts": [],
             "main": "src/main.ts",
