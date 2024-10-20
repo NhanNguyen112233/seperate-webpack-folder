@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@import './reset.scss';
+@import './mixin.scss';
+
+:root{
+  --black-1: #000000;
+  --white-1: #FFFFFF;
+  --white-2: #F8F8FA;
+  --white-3: #F1F1F2;
+
+  --purple-1: #7B35BB;
+  --purple-2: #E9DBF5;
+  --purple-3: #DBC6EF;
+  --purple-4: #B284DC;
+  --purple-5: #6E28AF;
+  --purple-6: #DABAD8;
+  --purple-7: #2C1F50;
+  --purple-8: #9758D0;
+  --purple-9: #42236A;
+  --purple-10:#cdb1e7;
+
+  --orange-1: #FF9800;
+  --orange-2: #FFF5E5;
+   --orange-3: #FFD699;
+   --orange-4: #f9e4c4;
+
+  --red-1: #FF3B30;
+  --red-2: #FFAFAA;
+  --red-3: #FFE9E8;
+  --red-4: #eacac9;
+
+  --grey-1: #D1D0D9;
+  --grey-2: #DFDEE4;
+  --grey-3: #7A7D9A;
+  --greyr-4: #EFEFF1;
+  --grey-5: #9F9DB0;
+
+  --green-1: #34C759;
+  --green-2: #17C37B;
+}
+
+html *{
+   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html{
+   font-size: 16px ;
+   line-height: 20px;
+}
+
