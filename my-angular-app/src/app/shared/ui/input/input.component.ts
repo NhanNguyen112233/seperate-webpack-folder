@@ -1,6 +1,27 @@
-import { Component, Input, Optional, Self, SkipSelf, ViewEncapsulation, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS, Validator, AbstractControl, ValidationErrors, NgControl, ControlContainer, FormControl } from '@angular/forms';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
+import {
+  Component,
+  Input,
+  Optional,
+  Self,
+  SkipSelf,
+  ViewEncapsulation,
+  forwardRef,
+} from '@angular/core';
+import {
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+  NG_VALIDATORS,
+  Validator,
+  AbstractControl,
+  ValidationErrors,
+  NgControl,
+  ControlContainer,
+  FormControl,
+} from '@angular/forms';
+import {
+  MAT_FORM_FIELD_DEFAULT_OPTIONS,
+  MatFormFieldModule,
+} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,19 +42,18 @@ const NOOP_VALUE_ACCESSOR: ControlValueAccessor = {
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' },
-    }
+    },
   ],
 })
-export class InputComponent  {
+export class InputComponent {
   @Input() label!: string;
   @Input() placeholder!: string;
   @Input() errorMessage: string = 'This field is invalid';
-  @Input() className:string=""
+  @Input() className: string = '';
 
   constructor(@Self() @Optional() public ngControl: NgControl) {
-    if(ngControl){
+    if (ngControl) {
       this.ngControl.valueAccessor = NOOP_VALUE_ACCESSOR;
-
     }
   }
 

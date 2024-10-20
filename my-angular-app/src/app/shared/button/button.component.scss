@@ -1,0 +1,49 @@
+@import '../../../styles.scss';
+
+.btn{
+    min-width: toRem(120px);
+    min-height: toRem(32px);
+    border-radius: toRem(4px);
+    border:none;
+    padding:toRem(8px) toRem(16px);
+    &:hover{
+        cursor: pointer;
+    }
+
+    &:disabled{
+        pointer-events: none;
+    }
+
+    &-primary {
+        background-color: var(--purple-1);
+        color:var(--orange-1);
+         &:active{
+            background-color: var(--purple-5);
+        }
+    }
+
+    &-outline-danger {
+        background-color: var(--red-3);
+        color:var(--red-1);
+        &:active{
+            background-color: var(--red-4);
+        }
+    }
+
+    &-outline-warning  {
+        background-color: var(--orange-2);
+        color:var(--orange-1);
+        border:toRem(1px) solid var(--orange-1);
+        &:active{
+            background-color: var(--orange-4);
+        }
+    }
+
+    &-secondary  {
+        background-color: var(--purple-3);
+        color:var(--purple-7);
+        &:active{
+            background-color: var(--purple-10);
+        }
+    }
+}

@@ -1,128 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+@import './reset.scss';
+@import './mixin.scss';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root{
+  --black-1: #000000;
+  --white-1: #FFFFFF;
+  --white-2: #F8F8FA;
+  --white-3: #F1F1F2;
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+  --purple-1: #7B35BB;
+  --purple-2: #E9DBF5;
+  --purple-3: #DBC6EF;
+  --purple-4: #B284DC;
+  --purple-5: #6E28AF;
+  --purple-6: #DABAD8;
+  --purple-7: #2C1F50;
+  --purple-8: #9758D0;
+  --purple-9: #42236A;
+  --purple-10:#cdb1e7;
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  --orange-1: #FF9800;
+  --orange-2: #FFF5E5;
+   --orange-3: #FFD699;
+   --orange-4: #f9e4c4;
+
+  --red-1: #FF3B30;
+  --red-2: #FFAFAA;
+  --red-3: #FFE9E8;
+  --red-4: #eacac9;
+
+  --grey-1: #D1D0D9;
+  --grey-2: #DFDEE4;
+  --grey-3: #7A7D9A;
+  --greyr-4: #EFEFF1;
+  --grey-5: #9F9DB0;
+
+  --green-1: #34C759;
+  --green-2: #17C37B;
 }
 
-//ad global settup here
-/* You can add global styles to this file, and also import other style files */
-
- .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mat-mdc-notch-piece {
-    border-color: #dfdee4 !important;
-    border-width: 1px;
-   }
-   
-   .mdc-text-field--outlined:not(.mdc-text-field--disabled).mat-mdc-notch-piece {
-    border-color: #dfdee4;
-   }
-   
-    .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mat-mdc-notch-piece {
-    border-color: #7b35bb !important;
-   }
-   
-    .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
-    width: 16px !important;
-   }
-   .mat-mdc-text-field-wrapper {
-    height: 36px !important;
-   }
-   .mdc-notched-outline {
-    top: 9px !important;
-   }
-   .mdc-notched-outline__leading {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-   }
-    .mdc-notched-outline__trailing {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-   }
-   
-   .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
-    color: #2c1f50 !important;
-    font-size: 14px;
-    line-height: 20px;
-    caret-color: #2c1f50 !important;
-   }
-   .mdc-text-field--outlined:not(.mdc-text-field--disabled)
-    .mdc-text-field__input::placeholder {
-    color: #d1d0d9 !important;
-   }
-
-    .mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input {
-    caret-color: #FF3B30 !important;
-
-   }
-
-   .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid
-    .mat-mdc-notch-piece {
-    border-color: #FF3B30 !important;
-   }
-   .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid .mat-mdc-notch-piece:hover {
-    border-color:#FF3B30 !important;
-    
-   }
-    .mat-mdc-form-field-error-wrapper {
-    top:9px !important;
-   }
-    .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
-    top: 50%;
-   }
-    .mat-mdc-text-field-wrapper .mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above{
-    --mat-mdc-form-field-label-transform:translateY(calc(calc(4.75px + var(--mat-form-field-container-height, 56px) / 2) * -1)) scale(var(--mat-mdc-form-field-floating-label-scale, 0.75))
-   }
-   .mat-mdc-form-field-hint-wrapper, .mat-mdc-form-field-error-wrapper {
-   top:9px;
-   }
-   
-   .mat-mdc-form-field-error {
-    color:#FF3B30 !important
+html *{
+   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+html{
+   font-size: 16px ;
+   line-height: 20px;
+}
+
