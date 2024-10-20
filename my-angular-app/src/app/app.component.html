@@ -1,0 +1,29 @@
+<div [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div>
+    <!-- <mat-form-field  class="input-test">
+
+      <input matInput  type="text" formControlName="textInput"> -->
+
+    <!-- <mat-error>error</mat-error> -->
+  <!-- </mat-form-field> -->
+  </div>
+
+  <div>
+    <admin-date-picker></admin-date-picker>
+  </div>
+
+  <div>
+    <admin-input 
+      formControlName="textInput"
+      placeholder="Enter text"
+      className='input-test'
+    />
+  </div>
+
+
+  <div><admin-search-select
+    formControlName="textInput"
+    />
+    <div>
+  <div class="color-red">ss</div>
+</div>

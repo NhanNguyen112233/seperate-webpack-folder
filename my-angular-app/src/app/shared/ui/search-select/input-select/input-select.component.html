@@ -1,0 +1,28 @@
+<div class="s-container">
+    <div class="s-select" (click)="handleClick()">
+        <div class="s-select-input" [ngClass]="{'s-select-input-focus':isOpen,'s-select-input-error':isError()}">
+        {{handleSetValue()}}</div>
+        <div class="s-select-arrow">
+            <img class="s-select-arrow-image" [ngClass]="{'s-select-arrow-image-rotate':isOpen}" src="../../../assets/ico/arrow.svg" alt="">
+        </div>
+    </div> 
+    <div class="error-text" *ngIf="isError()">Bạn đã lựa chọn sai</div>
+    &nbsp;
+    <ng-container *ngIf="isOpen">
+        <div class="s-dropdown">
+            <div class="s-dropdown-search">
+                <input class="s-dropdown-search-box" 
+                [ngModel]="searchValue"
+                (ngModelChange)="handleFilter($event)"
+                type="text" placeholder="Tìm kiếm"/>
+            </div>
+    
+            <ul class="s-dropdown-container">
+                <li *ngFor="let item of list" class="s-dropdown-option" (click)="handleSetOptionValue(item)">{{item.label}} 
+                <span *ngIf="item.isCheck">check</span>
+                </li>
+                
+            </ul>
+        </div>
+    </ng-container>
+</div>
