@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+     "clean-npm": "rimraf ./node_modules",
+    "clean-package-lock": "rimraf ./package-lock.json"
   },
   "private": true,
   "dependencies": {
