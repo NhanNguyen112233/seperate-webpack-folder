@@ -1,0 +1,37 @@
+
+@import "../../../styles.scss";
+::ng-deep .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background {
+    border-color:transparent !important;
+    background-color: var(--orange-1) !important;
+   
+}
+
+::ng-deep.mdc-checkbox__background {
+    border: toRem(2px) solid var(--orange-1) !important;
+    width: toRem(13px) !important;
+    height: toRem(13px) !important;
+    
+}
+
+::ng-deep .mdc-checkbox--disabled .mdc-checkbox__background {
+    border:toRem(2px) solid  var(--grey-6) !important;
+
+}
+
+::ng-deep .mdc-checkbox {
+    width: toRem(13px) !important;
+    height: toRem(13px) !important;
+    padding: calc((var(--mdc-checkbox-state-layer-size, 40px) - 18px) / 2) !important;
+    flex: auto !important;
+}
+
+::ng-deep .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background,
+::ng-deep .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background {
+    border-color:transparent !important;
+    background-color: var(--orange-1) !important;
+}
+
+::ng-deep .mat-mdc-checkbox-touch-target{
+    width: toRem(15px) !important;
+    height: toRem(15px) !important;
+}
