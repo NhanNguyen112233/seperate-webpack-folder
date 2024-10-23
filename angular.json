@@ -33,8 +33,7 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/styles.scss",
-              "../projects/admin-core-web-libs/src/styles.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -134,5 +133,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
