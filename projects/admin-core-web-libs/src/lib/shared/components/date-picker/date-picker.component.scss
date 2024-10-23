@@ -8,7 +8,7 @@
         border:toRem(1px) solid var(--grey-2);
         border-radius:  toRem(4px);
         min-width: toRem(252px);
-        height: toRem(36px);
+        min-height: toRem(36px);
         box-sizing: border-box;
         padding: toRem(8px) toRem(16px);
 
@@ -44,10 +44,29 @@
 
     
 }
-::ng-deep .mat-datepicker-content>table{
-    color: var(--purple-7) !important;
+::ng-deep .mat-calendar-table{
+    th,td,.mat-calendar-body-cell-content{color: var(--purple-7) !important;}
 }
 ::ng-deep .mat-mdc-button:not(:disabled)  {
     background-color: var(--grey-2)!important;
+    background-color: var(--purple-3)!important;
+
     color: var(--purple-7) !important;
+}
+
+
+::ng-deep .mat-calendar-body-selected {
+    background-color: var(--purple-3)!important;
+}
+
+::ng-deep.mat-calendar-body-selected.mat-calendar-body-today {
+    box-shadow: 0 0 0 1px var(--purple-3)!important;
+}
+
+::ng-deep .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    border-color: var(--purple-3)!important;
+}
+
+::ng-deep .mat-mdc-icon-button { 
+    color: var(--purple-7)!important;
 }

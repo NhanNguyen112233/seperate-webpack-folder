@@ -1,0 +1,66 @@
+@import "../../../styles.scss";
+
+.admin-select{
+    position: relative;
+    
+    &-input {
+        width: 100%; 
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &-icon{
+        position: absolute;
+        top:toRem(8px);
+        right: toRem(16px);
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    &-option{
+        position: absolute;   
+        top:110%;
+        left: 0;
+        right: 0;
+        max-height: toRem(200px);
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+      
+        box-shadow: toRem(0px) toRem(7px) toRem(12px) rgba(0, 0, 0, 0.12);
+        border-radius: toRem(4px);
+
+        &::-webkit-scrollbar {
+            width: toRem(4px);
+          }
+        
+          &::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius:0 toRem(4px) toRem(4px) 0;
+          }
+        
+          &::-webkit-scrollbar-thumb {
+            background-color: transparent;
+            border-radius: toRem(4px);
+            border: 3px solid var(--grey-5);
+          }
+        
+          &::-webkit-scrollbar-thumb:hover {
+            background-color: transparent
+          }
+
+        &>li{
+            padding: 0 toRem(16px);
+            box-sizing: border-box;
+            min-height: toRem(36px);
+            line-height: toRem(36px);
+            &:hover{
+                background-color: var(--purple-2);
+                cursor: pointer;
+            }
+        }
+    }
+}

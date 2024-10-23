@@ -18,6 +18,8 @@
   --purple-8: #9758D0;
   --purple-9: #42236A;
   --purple-10:#cdb1e7;
+  --purple-11:rgba(0, 0, 0, 0.05);
+  --purple-12: #AD8AD8;
 
   --orange-1: #FF9800;
   --orange-2: #FFF5E5;
@@ -41,10 +43,10 @@
 
 html *{
    font-family: Roboto, "Helvetica Neue", sans-serif;
+   line-height: 20px;
 }
 
 html{
    font-size: 16px ;
-   line-height: 20px;
 }
 
