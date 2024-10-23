@@ -3,7 +3,15 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AdminCoreWebLibModule } from 'dist/admin-core-web-libs';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideAnimationsAsync()]
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideAnimationsAsync(),
+    ...AdminCoreWebLibModule.forRoot({
+      apiUrl: 'http://localhost:3000',
+    }).providers,
+  ],
 };

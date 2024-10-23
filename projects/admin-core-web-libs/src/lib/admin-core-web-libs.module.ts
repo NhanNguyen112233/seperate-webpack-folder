@@ -1,35 +1,35 @@
-import { DatePickerComponent } from './lib/shared/components/date-picker/date-picker.component';
-import { SelectComponent } from 'projects/admin-core-web-libs/src/lib/shared/components/select/select.component';
-import { InputComponent } from './lib/shared/components/input/input.component';
-import { ButtonComponent } from './lib/shared/components/button/button.component';
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { SelectComponent } from './shared/components/select/select.component';
+import { InputComponent } from './shared/components/input/input.component';
+import { DatePickerComponent } from './shared/components/date-picker/date-picker.component';
+import { CheckboxComponent } from './shared/components/checkbox/checkbox.component';
+import { ButtonComponent } from './shared/components/button/button.component';
+// admin-core-web-libs/admin-core-web-libs.module.ts
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [],
   imports: [
     ButtonComponent,
+    CheckboxComponent,
+    DatePickerComponent,
     InputComponent,
     SelectComponent,
-    DatePickerComponent,
   ],
   exports: [
     ButtonComponent,
+    CheckboxComponent,
+    DatePickerComponent,
     InputComponent,
     SelectComponent,
-    DatePickerComponent,
   ],
 })
 export class AdminCoreWebLibModule {
-  public static forRoot(
-    environment: any
-  ): ModuleWithProviders<AdminCoreWebLibModule> {
+  static forRoot(environment: any): ModuleWithProviders<AdminCoreWebLibModule> {
     return {
       ngModule: AdminCoreWebLibModule,
       providers: [
-        {
-          provide: 'env', // you can also use InjectionToken
-          useValue: environment,
-        },
+        // Add any services that need to be singleton here
       ],
     };
   }
