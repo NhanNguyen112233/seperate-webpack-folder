@@ -41,4 +41,13 @@
             cursor: pointer;
         }
     }
+
+    
+}
+::ng-deep .mat-datepicker-content>table{
+    color: var(--purple-7) !important;
+}
+::ng-deep .mat-mdc-button:not(:disabled)  {
+    background-color: var(--grey-2)!important;
+    color: var(--purple-7) !important;
 }
