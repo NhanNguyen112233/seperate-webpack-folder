@@ -7,8 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-     "clean-npm": "rimraf ./node_modules",
-    "clean-package-lock": "rimraf ./package-lock.json"
+    "clean-npm": "rimraf ./node_modules",
+    "clean-package-lock": "rimraf ./package-lock.json",
+    "pack-dist": "cd ./dist/admin-core-web-libs && npm pack",
+    "clean-cache": "npm run clean-npm && npm run clean-package-lock && npm install"
   },
   "private": true,
   "dependencies": {
@@ -18,14 +20,15 @@
     "@angular/compiler": "^18.2.0",
     "@angular/core": "^18.2.0",
     "@angular/forms": "^18.2.0",
+    "@angular/material": "^18.2.9",
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
+    "admin-core-web-libs": "file:libs/admin-core-web-libs-0.0.1.tgz",
     "ngx-build-plus": "^18.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.10",
-    "admin-core-web-libs":"file:libs/admin-core-web-libs-0.0.1.tgz"
+    "zone.js": "~0.14.10"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "^18.0.0",
