@@ -3,4 +3,6 @@ export const DEFAULT_INPUT_CONFIG = {
   height: '36px',
   innerWidth: '80%',
   innerHeight: '20px',
+  minLength:0,
+  maxLength:10000
 };

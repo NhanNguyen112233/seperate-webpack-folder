@@ -12,4 +12,25 @@
     padding: toRem(8px) toRem(16px);
     overflow: hidden;
 
+    &-disabled {
+        background-color: var(--grey-2);
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom:0;
+        opacity: 0.5;
+        border-radius: toRem(4px);
+        z-index: 10;
+    }
+
+    &-error-text {
+        color: var(--red-1);
+        margin-top:toRem(4px);
+        margin-bottom:toRem(4px);
+    }
+
+    &-error {
+        border-color: var(--red-1);
+    }
 }

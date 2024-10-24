@@ -12,4 +12,25 @@
 
 <div>
     <tpb-select [width]="'252px'"></tpb-select>
+    <!-- <div  style="color: red;">
+        có lỗi xảy ra
+    </div> -->
+</div>
+<div>
+    <tpb-input placeholder="Tất cả"/>
+    <!-- <div  style="color: red;">
+        có lỗi xảy ra
+    </div> -->
+</div>
+<div>
+<form [formGroup]="form" >
+
+    <div>
+        <tpb-input 
+            formControlName="name"
+            placeholder="Tất cả"/>
+           
+    <tpb-button type="submit"  (click)="onSubmit()" appearance="primary">submit</tpb-button>
+    </div>
+</form>
 </div>

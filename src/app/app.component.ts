@@ -5,7 +5,8 @@ import { DatePickerComponent } from '../../projects/admin-core-web-libs/src/lib/
 import { InputComponent } from '../../projects/admin-core-web-libs/src/lib/shared/components/input/input.component';
 import { CheckboxComponent } from '../../projects/admin-core-web-libs/src/lib/shared/components/checkbox/checkbox.component';
 import { SelectComponent } from 'projects/admin-core-web-libs/src/lib/shared/components/select/select.component';
-import { AdminCoreWebLibModule } from 'dist/admin-core-web-libs';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+// import { AdminCoreWebLibModule } from 'dist/admin-core-web-libs';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { AdminCoreWebLibModule } from 'dist/admin-core-web-libs';
     CheckboxComponent,
     DatePickerComponent,
     InputComponent,
+    ReactiveFormsModule,
     CheckboxComponent,
     SelectComponent,
     // AdminCoreWebLibModule.forRoot({}) // Moved to the application's main module or bootstrap
@@ -25,4 +27,14 @@ import { AdminCoreWebLibModule } from 'dist/admin-core-web-libs';
 })
 export class AppComponent {
   title = 'admin-core-web';
+  form!:FormGroup
+  constructor(private fb:FormBuilder) {
+    this.form = this.fb.group({ 
+      name:["",[Validators.required]],
+    });
+  }
+
+  onSubmit(){
+    console.log(this.form.getRawValue());
+  }
 }

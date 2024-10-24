@@ -1,9 +1,16 @@
-<admin-form-field>
+<admin-form-field
+[isDisabled]="isDisabled"
+[errorState]="invalid && dirty && touched"
+>
     <input 
-    [(ngModel)]="value"
-    type="text"
-    adminInput
-    [fullWidth]="true"
-    [placeholder]="placeholder"
+        [(ngModel)]="value"
+        (ngModelChange)="onChangeValue($event)"
+        type="text"
+        adminInput
+        [fullWidth]="true"
+        [placeholder]="placeholder"
+        [minLength]="minLength"
+        [maxLength]="maxLength"
+        [required]="required"
     />
 </admin-form-field>
