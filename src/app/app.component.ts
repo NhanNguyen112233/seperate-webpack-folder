@@ -35,6 +35,11 @@ export class AppComponent {
   }
 
   onSubmit(){
-    console.log(this.form.getRawValue());
+   this.form.controls['name'].markAsTouched();
+   this.form.controls['name'].markAsDirty();
+    if(this.form.valid){
+
+      console.log(this.form.getRawValue());
+    }
   }
 }

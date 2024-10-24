@@ -66,14 +66,16 @@ export class InputDirective implements AfterViewInit {
   }
 
   private applyPlaceholderStyle() {
-    const styleElement = this.renderer.createElement('style');
+    const nativeElement = this.el.nativeElement;
 
+    // Create a style element
+    const styleElement = this.renderer.createElement('style');
     this.renderer.setProperty(
       styleElement,
       'innerHTML',
       `
       input[type=text][adminInput]::placeholder {
-        color: var(--grey-1);
+        color: var(--grey-2);
       }
     `
     );
