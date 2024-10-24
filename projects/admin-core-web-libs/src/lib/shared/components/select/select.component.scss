@@ -2,7 +2,11 @@
 
 .admin-select{
     position: relative;
-    
+    width: auto;
+    &:hover{
+        cursor: pointer;
+    }
+
     &-input {
         width: 100%; 
         white-space: nowrap;
@@ -28,7 +32,7 @@
         max-height: toRem(200px);
         overflow-x: hidden;
         overflow-y: scroll;
-
+        background-color: var(--white-1);
       
         box-shadow: toRem(0px) toRem(7px) toRem(12px) rgba(0, 0, 0, 0.12);
         border-radius: toRem(4px);

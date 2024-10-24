@@ -1,16 +1,20 @@
+<div #option>
+
 <div class="admin-select"
     [ngStyle]="{'width': width, 'height': height}"
+    #select
 >
-    <admin-form-field [ngStyle]="{'width': width, 'height': height}">
+    <admin-form-field [ngStyle]="{'width': width, 'height': height}" >
         <div adminInput
             class="admin-select-input"
             [placeholder]="placeholder"
+            (click)="handleSelect()"
             > 
             Tất cả
         </div>
 
-        <div class="admin-select-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="admin-select-icon"  (click)="handleSelect()">
+            <svg #icon width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 13.75L5 8.78676L6.2963 7.5L10 11.1765L13.7037 7.5L15 8.78676L10 13.75Z" fill="#FF9800"/>
             </svg>
         </div>
@@ -18,8 +22,9 @@
             
     </admin-form-field>
 
-    <ul class="admin-select-option">
-        <li><tpb-checkbox/>sss</li>
+<ng-container *ngIf="isOpen" >
+    <ul class="admin-select-option"  >
+        <li ><tpb-checkbox/>sss</li>
         <li>kakak</li>
         <li>hello</li>
         <li>kakak</li>
@@ -36,4 +41,6 @@
         <li>kakak</li>  <li>hello</li>
         <li>kakak</li>
     </ul>
+</ng-container>
+</div>
 </div>

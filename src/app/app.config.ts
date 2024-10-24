@@ -10,8 +10,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideAnimationsAsync(),
-    ...AdminCoreWebLibModule.forRoot({
-      apiUrl: 'http://localhost:3000',
-    }).providers,
+    ...(AdminCoreWebLibModule.forRoot({}).providers as any),
   ],
 };

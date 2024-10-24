@@ -5,6 +5,7 @@ import { DatePickerComponent } from '../../projects/admin-core-web-libs/src/lib/
 import { InputComponent } from '../../projects/admin-core-web-libs/src/lib/shared/components/input/input.component';
 import { CheckboxComponent } from '../../projects/admin-core-web-libs/src/lib/shared/components/checkbox/checkbox.component';
 import { SelectComponent } from 'projects/admin-core-web-libs/src/lib/shared/components/select/select.component';
+import { AdminCoreWebLibModule } from 'dist/admin-core-web-libs';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { SelectComponent } from 'projects/admin-core-web-libs/src/lib/shared/com
     InputComponent,
     CheckboxComponent,
     SelectComponent,
+    // AdminCoreWebLibModule.forRoot({}) // Moved to the application's main module or bootstrap
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
