@@ -33,11 +33,6 @@ export class ButtonComponent {
       $event.stopImmediatePropagation();
       return;
     }
-    if (this.type === 'submit' && this.disabled) {
-      $event.preventDefault();
-      $event.stopImmediatePropagation();
-      return;
-    }
     this.onClick.emit();
 
   }
