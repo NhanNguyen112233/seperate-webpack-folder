@@ -6,6 +6,7 @@ import { InputComponent } from '../../projects/admin-core-web-libs/src/lib/share
 import { CheckboxComponent } from '../../projects/admin-core-web-libs/src/lib/shared/components/checkbox/checkbox.component';
 import { SelectComponent } from 'projects/admin-core-web-libs/src/lib/shared/components/select/select.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TextAreaComponent } from 'projects/admin-core-web-libs/src/lib/shared/components/text-area/text-area.component';
 // import { AdminCoreWebLibModule } from 'dist/admin-core-web-libs';
 
 @Component({
@@ -20,6 +21,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
     ReactiveFormsModule,
     CheckboxComponent,
     SelectComponent,
+    TextAreaComponent
     // AdminCoreWebLibModule.forRoot({}) // Moved to the application's main module or bootstrap
   ],
   templateUrl: './app.component.html',
@@ -30,13 +32,13 @@ export class AppComponent {
   form!:FormGroup
   constructor(private fb:FormBuilder) {
     this.form = this.fb.group({ 
-      name:["",[Validators.required]],
+      name:[{value:'',disabled:true},[Validators.required]],
+      des:["",[Validators.required]],
     });
   }
 
   onSubmit(){
-   this.form.controls['name'].markAsTouched();
-   this.form.controls['name'].markAsDirty();
+    this.form.markAllAsTouched();
     if(this.form.valid){
 
       console.log(this.form.getRawValue());

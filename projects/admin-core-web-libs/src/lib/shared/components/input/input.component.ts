@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Optional, Self } from '@angular/core';
+import { Component, EventEmitter, Input, Optional, Output, Self } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { FormWrapperComponent } from '../../template/form-wrapper/form-wrapper.component';
 import { DEFAULT_INPUT_CONFIG } from '../../constant/default-config';
@@ -27,9 +27,12 @@ export class InputComponent implements ControlValueAccessor {
   @Input() maxLength: number =DEFAULT_INPUT_CONFIG.maxLength;
   @Input() required: boolean =false;
 
-  private onChange: any = (value:string) => {};
-  private onTouched: any = () => {};
-  private onValidatorChange: any = () => {};
+
+  @Output() onInputChange= new EventEmitter<string>();
+
+  private onChange: (value:string)=>void = (value:string) => {};
+  private onTouched: ()=>void = () => {};
+  private onValidatorChange: ()=>void = () => {};
   
 
   constructor(@Self() @Optional() private ngControl:NgControl) {
@@ -76,10 +79,26 @@ export class InputComponent implements ControlValueAccessor {
     this.isDisabled = isDisabled;
   }
 
-   onChangeValue(value: any): void {
+  
+
+  public onFocus(): void {
+    console.log('Input focused');
+  }
+
+  public onBlur(): void {
+    console.log('Input blurred');
+    this.onTouched();
+  }
+
+  isInputInvalid(){
+    return this.invalid && this.touched || this.dirty && this.invalid;
+  }
+
+  onChangeValue(value: any): void {
     this.value = value;
     this.onChange(value);
     this.onTouched();
     this.onValidatorChange();
+    this.onInputChange.emit(value);
   }
 }

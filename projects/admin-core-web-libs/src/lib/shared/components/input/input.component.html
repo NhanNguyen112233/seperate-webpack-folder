@@ -1,6 +1,6 @@
 <admin-form-field
 [isDisabled]="isDisabled"
-[errorState]="invalid && dirty && touched"
+[errorState]="isInputInvalid()"
 >
     <input 
         [(ngModel)]="value"
@@ -12,5 +12,7 @@
         [minLength]="minLength"
         [maxLength]="maxLength"
         [required]="required"
+        (focus)="onFocus()"
+        (blur)="onBlur()"
     />
 </admin-form-field>

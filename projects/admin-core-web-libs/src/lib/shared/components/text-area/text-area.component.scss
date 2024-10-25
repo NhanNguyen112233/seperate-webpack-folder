@@ -1,0 +1,12 @@
+@import "../../../styles.scss";
+
+:host::ng-deep.txt-form-field {
+    min-width: auto !important;
+    padding:0 !important;
+}
+
+.txt-content{
+    height:auto;
+    padding: toRem(8px) toRem(16px) !important;
+    width: 100% !important;
+}

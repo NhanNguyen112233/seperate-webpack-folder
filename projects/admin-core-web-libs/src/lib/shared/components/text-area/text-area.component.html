@@ -1,0 +1,20 @@
+<admin-form-field class="txt-form-field"
+width="100%"
+[isDisabled]="disabled"
+[errorState]="isInputInvalid()"
+>
+
+<textarea
+    class="txt-content"
+    adminInput
+    [fullWidth]="true"
+    [(ngModel)]="value"
+    (ngModelChange)="onChangeValue($event)"
+    [minLength]="minLength"
+    [maxLength]="maxLength"
+    [required]="required"
+    (focus)="onFocus()"
+    (blur)="onBlur()"
+>
+</textarea>
+</admin-form-field>
