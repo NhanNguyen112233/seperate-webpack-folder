@@ -4,6 +4,7 @@ class="btn"
 [ngClass]="customClass()"
 [disabled]="disabled"
 [attr.aria-label]="label"
+(click)="handleClick($event)"
 >
 <ng-content></ng-content>
 </button>

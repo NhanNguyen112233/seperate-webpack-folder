@@ -34,7 +34,9 @@
         <tpb-text-area
         formControlName="des"
         />
-    <tpb-button type="submit"  (click)="onSubmit()" appearance="primary">submit</tpb-button>
+    <tpb-button 
+    [disabled]="!form.valid"
+    type="submit"  (onClick)="onSubmit()" appearance="primary">submit</tpb-button>
     </div>
 </form>
 </div>

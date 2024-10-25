@@ -6,12 +6,13 @@
     border-radius: toRem(4px);
     border:none;
     padding:toRem(8px) toRem(16px);
+    
     &:hover{
         cursor: pointer;
     }
 
-    &:disabled{
-        pointer-events: none;
+    &:disabled, &-disabled {
+        pointer-events: none !important;
     }
 
     &-primary {

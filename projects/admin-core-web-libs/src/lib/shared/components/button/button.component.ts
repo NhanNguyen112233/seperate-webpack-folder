@@ -22,15 +22,33 @@ export class ButtonComponent {
   @Input() appearance: IButtonAppearance = 'primary';
   @Input() class = '';
   @Input() disabled = false;
+  @Input() type: 'button' | 'submit' | 'reset' = 'button';
 
   @Output() onClick = new EventEmitter<void>();
 
+  handleClick($event: MouseEvent): void {
+    
+    if (this.disabled) {
+      $event.preventDefault();
+      $event.stopImmediatePropagation();
+      return;
+    }
+    if (this.type === 'submit' && this.disabled) {
+      $event.preventDefault();
+      $event.stopImmediatePropagation();
+      return;
+    }
+    this.onClick.emit();
+
+  }
+
   customClass(): string {
     if (this.class) {
-      return this.disabled ? `btn_disabled ${this.class}` : this.class;
+      return this.disabled ? `btn-disabled ${this.class}` : this.class;
     } else {
+      // btn_${this.appearance}-disabled
       return this.disabled
-        ? `btn_${this.appearance}-disabled`
+        ? `btn-disabled`
         : `btn-${this.appearance}`;
     }
   }

@@ -38,6 +38,8 @@ export class AppComponent {
   }
 
   onSubmit(){
+    console.log('clicked');
+    
     this.form.markAllAsTouched();
     if(this.form.valid){
 
