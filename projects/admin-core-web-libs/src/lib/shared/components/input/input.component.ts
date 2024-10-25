@@ -4,6 +4,7 @@ import { ControlValueAccessor, FormsModule, NgControl, ReactiveFormsModule } fro
 import { FormWrapperComponent } from '../../template/form-wrapper/form-wrapper.component';
 import { DEFAULT_INPUT_CONFIG } from '../../constant/default-config';
 import { InputDirective } from '../../directive/input/input.directive';
+import { IFormWrapperImpl } from '../../template/form-wrapper/form-wrapper.i';
 const NOOP_VALUE_ACCESSOR: ControlValueAccessor = {
   writeValue(): void {},
   registerOnChange(): void {},
@@ -16,9 +17,9 @@ const NOOP_VALUE_ACCESSOR: ControlValueAccessor = {
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
-export class InputComponent implements ControlValueAccessor {
+export class InputComponent implements ControlValueAccessor, IFormWrapperImpl{
   isDisabled: boolean = false;
-
+  
   @Input() width: string = DEFAULT_INPUT_CONFIG.width;
   @Input() height: string = DEFAULT_INPUT_CONFIG.height;
   @Input() placeholder: string = '';
@@ -26,7 +27,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() minLength: number =DEFAULT_INPUT_CONFIG.minLength;
   @Input() maxLength: number =DEFAULT_INPUT_CONFIG.maxLength;
   @Input() required: boolean =false;
-
+  @Input() errorMessage: string="";
 
   @Output() onInputChange= new EventEmitter<string>();
 

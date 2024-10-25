@@ -4,6 +4,7 @@ import { InputDirective } from '../../directive/input/input.directive';
 import { ControlValueAccessor, FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DEFAULT_INPUT_CONFIG } from '../../constant/default-config';
+import { IFormWrapperImpl } from '../../template/form-wrapper/form-wrapper.i';
 
 @Component({
   selector: 'tpb-text-area',
@@ -12,7 +13,7 @@ import { DEFAULT_INPUT_CONFIG } from '../../constant/default-config';
   templateUrl: './text-area.component.html',
   styleUrl: './text-area.component.scss',
 })
-export class TextAreaComponent implements ControlValueAccessor {
+export class TextAreaComponent implements ControlValueAccessor,IFormWrapperImpl {
   disabled: boolean = false;
 
   @Input() width: string = '100%';

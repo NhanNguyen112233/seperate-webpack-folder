@@ -32,7 +32,7 @@ export class AppComponent {
   form!:FormGroup
   constructor(private fb:FormBuilder) {
     this.form = this.fb.group({ 
-      name:[{value:'',disabled:true},[Validators.required]],
+      name:[{value:'',disabled:false},[Validators.required,Validators.maxLength(10)]],
       des:["",[Validators.required]],
     });
   }
@@ -42,6 +42,23 @@ export class AppComponent {
     if(this.form.valid){
 
       console.log(this.form.getRawValue());
+    }
+  }
+
+  handleError(formControlName:string){
+    switch(formControlName){
+      case 'name':
+       if(this.form.get('name')?.hasError('required')){
+          return 'Name is required';
+       }
+       else if(this.form.get('name')?.hasError('maxlength')){ 
+          return 'Name should not exceed 10 characters';
+       }
+       else{  
+          return '';
+       }
+      default:
+        return '';
     }
   }
 }
