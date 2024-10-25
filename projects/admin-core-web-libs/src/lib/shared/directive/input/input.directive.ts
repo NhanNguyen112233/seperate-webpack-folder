@@ -16,7 +16,6 @@ export class InputDirective implements AfterViewInit {
   @Input() height: string = DEFAULT_INPUT_CONFIG.innerHeight;
   @Input() width: string = DEFAULT_INPUT_CONFIG.innerWidth;
 
-  @Input() placeholder: string = '';
   private readonly COMMON_CONFIG = {
     border: 'none',
     color: 'var(--purple-7)',
@@ -74,7 +73,7 @@ export class InputDirective implements AfterViewInit {
       styleElement,
       'innerHTML',
       `
-      input[type=text][adminInput]::placeholder {
+      input[type=text][adminInput]::placeholder,[adminInput]::placeholder {
         color: var(--grey-2);
       }
     `
