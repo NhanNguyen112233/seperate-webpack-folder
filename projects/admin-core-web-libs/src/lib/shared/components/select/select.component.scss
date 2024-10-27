@@ -22,9 +22,10 @@
 
     &-icon{
         position: absolute;
-        top:toRem(8px);
+        top:toRem(7px);
         right: toRem(16px);
-
+        width: toRem(22px);
+        height: toRem(22px);
         &:hover{
             cursor: pointer;
         }

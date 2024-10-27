@@ -1,3 +1,4 @@
+import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
@@ -31,6 +32,7 @@ import { IAdminNgControl } from '../../constant/ng-control.i';
     CommonModule,
     CheckboxComponent,
     FormsModule,
+    MatIconModule,
     FormWrapperComponent,
     InputDirective,
   ],
@@ -148,12 +150,9 @@ export class SelectComponent
     this.disabled = isDisabled;
   }
 
-  public onFocus(): void {
-    console.log('Input focused');
-  }
+  public onFocus(): void {}
 
   public onBlur(): void {
-    console.log('Input blurred');
     this.onTouched();
   }
 

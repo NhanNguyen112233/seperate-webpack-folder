@@ -106,12 +106,9 @@ export class InputComponent
     this.isDisabled = isDisabled;
   }
 
-  public onFocus(): void {
-    console.log('Input focused');
-  }
+  public onFocus(): void {}
 
   public onBlur(): void {
-    console.log('Input blurred');
     this.onTouched();
   }
 

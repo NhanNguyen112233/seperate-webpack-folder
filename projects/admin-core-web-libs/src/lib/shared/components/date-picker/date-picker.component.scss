@@ -40,6 +40,10 @@
         &:hover{
             cursor: pointer;
         }
+        &-icon{
+            width:toRem(16px);
+            height:toRem(16px);
+        }
     }
 
     

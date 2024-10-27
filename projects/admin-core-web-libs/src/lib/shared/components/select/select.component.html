@@ -5,19 +5,17 @@
 >
     <div class="admin-select-container" (click)="changeSelectState()">
         <admin-form-field
-        [isDisabled]="disabled"
-        [errorState]="isInputInvalid()"     
+            [isDisabled]="disabled"
+            [errorState]="isInputInvalid()"     
         >
-            <div adminInput
-                class="admin-select-input"                
-                > 
+            <div 
+                adminInput
+                class="admin-select-input"> 
                 {{showSelectedOption()}}
             </div>
     
-            <div class="admin-select-icon"  >
-                <svg #icon width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 13.75L5 8.78676L6.2963 7.5L10 11.1765L13.7037 7.5L15 8.78676L10 13.75Z" fill="#FF9800"/>
-                </svg>
+            <div class="admin-select-icon"   #icon>
+                <mat-icon  svgIcon="admin-arrow-down"></mat-icon>
             </div>      
         </admin-form-field>
     </div>

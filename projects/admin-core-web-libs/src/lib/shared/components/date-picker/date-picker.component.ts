@@ -26,6 +26,8 @@ import { DEFAULT_INPUT_CONFIG } from '../../constant/default-config';
 import { InputDirective } from '../../directive/input/input.directive';
 import { IFormWrapperImpl } from '../../template/form-wrapper/form-wrapper.i';
 import { IAdminNgControl } from '../../constant/ng-control.i';
+import { MatIconModule } from '@angular/material/icon';
+import { AdminIconRegisterService } from '../../services/admin-icon-register.service';
 
 // styling
 // translate
@@ -43,10 +45,12 @@ import { IAdminNgControl } from '../../constant/ng-control.i';
     CommonModule,
     FormsModule,
     MatNativeDateModule,
+    MatIconModule,
     FormWrapperComponent,
     InputDirective,
   ],
   providers: [
+    AdminIconRegisterService,
     {
       provide: MAT_DATE_FORMATS,
       useValue: CUSTOM_DATE_FORMATS,
@@ -82,6 +86,7 @@ export class DatePickerComponent
 
   constructor(
     private adapter: DateAdapter<Date>,
+    private adminRegistryIconService: AdminIconRegisterService,
     @Self() @Optional() private ngControl: NgControl
   ) {
     if (this.ngControl) {
@@ -128,18 +133,13 @@ export class DatePickerComponent
     this.disabled = isDisabled;
   }
 
-  public onFocus(): void {
-    console.log('Input focused');
-  }
+  public onFocus(): void {}
 
   public onBlur(): void {
-    console.log('Input blurred');
     this.onTouched();
   }
 
   public onChangeValue(value: any): void {
-    console.log('vavlue', value);
-
     this.value = value;
     this.onChange(value);
     this.onTouched();
