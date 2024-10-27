@@ -1,9 +1,16 @@
 <tpb-button appearance="secondary">secondary</tpb-button>
 <div>
-    <tpb-date-picker></tpb-date-picker>
+    <tpb-date-picker
+    [value]="noReactive.date"
+    (onInputChange)="onInputChange($event)"
+    ></tpb-date-picker>
 </div>
 <div>
-    <tpb-input placeholder="Tất cả"/>
+    <tpb-input 
+    [value]="noReactive.input"
+    (onInputChange)="onInputChange($event)"
+
+    placeholder="Tất cả"/>
 </div>
 
 <div>
@@ -11,16 +18,14 @@
 </div>
 
 <div>
-    <tpb-select [width]="'252px'"></tpb-select>
-    <!-- <div  style="color: red;">
-        có lỗi xảy ra
-    </div> -->
+    <tpb-select [width]="'252px'"
+    (onInputChange)="onInputChange($event)"
+    value="1"
+    [selectOptions]="selectOption"
+    />
 </div>
 <div>
     <tpb-input placeholder="Tất cả"/>
-    <!-- <div  style="color: red;">
-        có lỗi xảy ra
-    </div> -->
 </div>
 <div>
 <form [formGroup]="form" >
@@ -29,16 +34,27 @@
         <tpb-input 
             [errorMessage]="handleError('name')"
             formControlName="name"
-            placeholder="Tất cả"/>
+            placeholder="Tất cả"
+        />
         
         <tpb-text-area
-        formControlName="des"
-
-        placeholder="2"
+            formControlName="des"
+            placeholder="2"
         />
+
+        <tpb-select
+            [selectOptions]="selectOption"
+            formControlName="select"
+        />
+
+        <tpb-date-picker
+            formControlName="date"
+            errorMessage="Input không hợp lệ"
+        />
+
     <tpb-button 
-    [disabled]="!form.valid"
     type="submit"  (onClick)="onSubmit()" appearance="primary">submit</tpb-button>
     </div>
 </form>
+<div>nhan dep trai</div>
 </div>

@@ -37,7 +37,7 @@
         right: 0;
         max-height: toRem(200px);
         overflow-x: hidden;
-        overflow-y: scroll;
+        overflow-y: auto;
         background-color: var(--white-1);
         z-index: 3;
         box-shadow: toRem(0px) toRem(7px) toRem(12px) rgba(0, 0, 0, 0.12);

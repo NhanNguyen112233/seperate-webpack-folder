@@ -1,10 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Optional, Output, Self } from '@angular/core';
-import { ControlValueAccessor, FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Optional,
+  Output,
+  Self,
+} from '@angular/core';
+import {
+  ControlValueAccessor,
+  FormsModule,
+  NgControl,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { FormWrapperComponent } from '../../template/form-wrapper/form-wrapper.component';
 import { DEFAULT_INPUT_CONFIG } from '../../constant/default-config';
 import { InputDirective } from '../../directive/input/input.directive';
 import { IFormWrapperImpl } from '../../template/form-wrapper/form-wrapper.i';
+import { IAdminNgControl } from '../../constant/ng-control.i';
 const NOOP_VALUE_ACCESSOR: ControlValueAccessor = {
   writeValue(): void {},
   registerOnChange(): void {},
@@ -13,50 +26,56 @@ const NOOP_VALUE_ACCESSOR: ControlValueAccessor = {
 @Component({
   selector: 'tpb-input',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule,FormsModule, FormWrapperComponent, InputDirective],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    FormWrapperComponent,
+    InputDirective,
+  ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
-export class InputComponent implements ControlValueAccessor, IFormWrapperImpl{
+export class InputComponent
+  implements ControlValueAccessor, IFormWrapperImpl, IAdminNgControl
+{
   isDisabled: boolean = false;
-  
+
   @Input() width: string = DEFAULT_INPUT_CONFIG.width;
   @Input() height: string = DEFAULT_INPUT_CONFIG.height;
   @Input() placeholder: string = '';
-  @Input() value= '';
-  @Input() minLength: number =DEFAULT_INPUT_CONFIG.minLength;
-  @Input() maxLength: number =DEFAULT_INPUT_CONFIG.maxLength;
-  @Input() required: boolean =false;
-  @Input() errorMessage: string="";
+  @Input() value = '';
+  @Input() minLength: number = DEFAULT_INPUT_CONFIG.minLength;
+  @Input() maxLength: number = DEFAULT_INPUT_CONFIG.maxLength;
+  @Input() required: boolean = false;
+  @Input() errorMessage: string = '';
 
-  @Output() onInputChange= new EventEmitter<string>();
+  @Output() onInputChange = new EventEmitter<string>();
 
-  private onChange: (value:string)=>void = (value:string) => {};
-  private onTouched: ()=>void = () => {};
-  private onValidatorChange: ()=>void = () => {};
-  
+  private onChange: (value: string) => void = (value: string) => {};
+  private onTouched: () => void = () => {};
+  private onValidatorChange: () => void = () => {};
 
-  constructor(@Self() @Optional() private ngControl:NgControl) {
-    if(this.ngControl){
+  constructor(@Self() @Optional() private ngControl: NgControl) {
+    if (this.ngControl) {
       this.ngControl.valueAccessor = this;
     }
-    console.log('ng control',this.ngControl);
-    
+    console.log('ng control', this.ngControl);
   }
- 
-  get valid(){
+
+  get valid() {
     return !!this.ngControl?.control?.valid;
   }
 
-  get invalid(){
+  get invalid() {
     return !!this.ngControl?.control?.invalid;
   }
 
-  get dirty(){ 
+  get dirty() {
     return !!this.ngControl?.control?.dirty;
   }
 
-  get touched(){
+  get touched() {
     return !!this.ngControl?.control?.touched;
   }
 
@@ -80,8 +99,6 @@ export class InputComponent implements ControlValueAccessor, IFormWrapperImpl{
     this.isDisabled = isDisabled;
   }
 
-  
-
   public onFocus(): void {
     console.log('Input focused');
   }
@@ -91,8 +108,8 @@ export class InputComponent implements ControlValueAccessor, IFormWrapperImpl{
     this.onTouched();
   }
 
-  isInputInvalid(){
-    return this.invalid && this.touched || this.dirty && this.invalid;
+  isInputInvalid() {
+    return (this.invalid && this.touched) || (this.dirty && this.invalid);
   }
 
   onChangeValue(value: any): void {
