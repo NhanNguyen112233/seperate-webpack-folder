@@ -54,7 +54,7 @@ export function dateValidator(adapter: DateAdapter<Date>): ValidatorFn {
 export class AppComponent {
   noReactive = {
     date: new Date(new Date().setDate(new Date().getDate() - 1)),
-    input: 'hihi',
+    input: '',
   };
 
   onInputChange(event: any) {

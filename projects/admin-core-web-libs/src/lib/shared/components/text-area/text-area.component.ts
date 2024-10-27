@@ -38,7 +38,9 @@ export class TextAreaComponent
   implements ControlValueAccessor, IFormWrapperImpl, IAdminNgControl
 {
   disabled: boolean = false;
-
+  noReactiveFormState = {
+    touched: false,
+  };
   @Input() width: string = '100%';
   @Input() height: string = '116px';
   @Input() value: string = '';
@@ -50,7 +52,9 @@ export class TextAreaComponent
   @Output() onInputChange = new EventEmitter<string>();
 
   private onChange: (value: string) => void = (value: string) => {};
-  private onTouched: () => void = () => {};
+  private onTouched: () => void = () => {
+    this.noReactiveFormState.touched = true;
+  };
   private onValidatorChange: () => void = () => {};
 
   constructor(@Self() @Optional() private ngControl: NgControl) {
@@ -72,7 +76,9 @@ export class TextAreaComponent
   }
 
   get touched() {
-    return !!this.ngControl?.control?.touched;
+    return this.ngControl
+      ? !!this.ngControl?.control?.touched
+      : this.noReactiveFormState.touched;
   }
 
   public writeValue(value: any): void {

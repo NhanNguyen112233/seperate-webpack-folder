@@ -43,14 +43,14 @@ export class SelectComponent
 {
   isOpen: boolean = false;
   disabled: boolean = false;
-
-  hello(item: any) {
-    console.log(item);
-    return item.label;
-  }
+  noReactiveFormState = {
+    touched: false,
+  };
 
   private onChange: (value: string) => void = (value: string) => {};
-  private onTouched: () => void = () => {};
+  private onTouched: () => void = () => {
+    this.noReactiveFormState.touched = true;
+  };
   private onValidatorChange: () => void = () => {};
 
   @Input() placeholder: string = 'Tất cả';
@@ -103,7 +103,9 @@ export class SelectComponent
   }
 
   get touched() {
-    return !!this.ngControl?.control?.touched;
+    return this.ngControl
+      ? !!this.ngControl?.control?.touched
+      : this.noReactiveFormState.touched;
   }
 
   changeSelectState() {

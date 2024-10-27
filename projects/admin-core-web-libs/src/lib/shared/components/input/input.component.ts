@@ -40,6 +40,9 @@ export class InputComponent
   implements ControlValueAccessor, IFormWrapperImpl, IAdminNgControl
 {
   isDisabled: boolean = false;
+  noReactiveFormState = {
+    touched: false,
+  };
 
   @Input() width: string = DEFAULT_INPUT_CONFIG.width;
   @Input() height: string = DEFAULT_INPUT_CONFIG.height;
@@ -53,14 +56,15 @@ export class InputComponent
   @Output() onInputChange = new EventEmitter<string>();
 
   private onChange: (value: string) => void = (value: string) => {};
-  private onTouched: () => void = () => {};
+  private onTouched: () => void = () => {
+    this.noReactiveFormState.touched = true;
+  };
   private onValidatorChange: () => void = () => {};
 
   constructor(@Self() @Optional() private ngControl: NgControl) {
     if (this.ngControl) {
       this.ngControl.valueAccessor = this;
     }
-    console.log('ng control', this.ngControl);
   }
 
   get valid() {
@@ -76,7 +80,9 @@ export class InputComponent
   }
 
   get touched() {
-    return !!this.ngControl?.control?.touched;
+    return this.ngControl
+      ? !!this.ngControl?.control?.touched
+      : this.noReactiveFormState.touched;
   }
 
   public writeValue(value: any): void {
@@ -109,7 +115,11 @@ export class InputComponent
   }
 
   isInputInvalid() {
-    return (this.invalid && this.touched) || (this.dirty && this.invalid);
+    return (
+      (this.invalid && this.touched) ||
+      (this.dirty && this.invalid) ||
+      (this.required && !this.value && this.touched)
+    );
   }
 
   onChangeValue(value: any): void {
