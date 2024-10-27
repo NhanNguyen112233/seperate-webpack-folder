@@ -47,6 +47,8 @@ export class InputComponent
   @Input() width: string = DEFAULT_INPUT_CONFIG.width;
   @Input() height: string = DEFAULT_INPUT_CONFIG.height;
   @Input() placeholder: string = '';
+  @Input() customContent: '' | 'prefix' | 'suffix' | 'all' = '';
+
   @Input() value = '';
   @Input() minLength: number = DEFAULT_INPUT_CONFIG.minLength;
   @Input() maxLength: number = DEFAULT_INPUT_CONFIG.maxLength;
@@ -84,6 +86,10 @@ export class InputComponent
     return this.ngControl
       ? !!this.ngControl?.control?.touched
       : this.noReactiveFormState.touched;
+  }
+
+  displayCustomContent(position: 'suffix' | 'prefix' | 'all') {
+    return this.customContent === position || this.customContent === 'all';
   }
 
   public writeValue(value: any): void {

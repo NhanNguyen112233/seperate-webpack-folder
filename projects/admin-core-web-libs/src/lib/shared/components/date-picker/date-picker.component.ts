@@ -72,7 +72,7 @@ export class DatePickerComponent
   @Input() height: string = DEFAULT_INPUT_CONFIG.height;
 
   @Input() value: string | Date = '';
-  @Input() minDate: Date | null = new Date();
+  @Input() minDate: Date | null = null;
   @Input() maxDate: Date | null = null;
   @Input() errorMessage: string = '';
 

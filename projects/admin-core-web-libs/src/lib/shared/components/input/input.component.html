@@ -3,10 +3,17 @@
 [errorState]="isInputInvalid()"
 [errorMessage]="errorMessage"
 >
+    <ng-container *ngIf="displayCustomContent('prefix')">
+       <ng-content select="[prefix]"></ng-content>
+       
+        <ng-template #prefix>
+            <!-- Default prefix content can go here if needed -->
+        </ng-template>
+    </ng-container>
+
     <input 
         [(ngModel)]="value"
         (ngModelChange)="onChangeValue($event)"
-        [type]="type"
         adminInput
         [fullWidth]="true"
         [placeholder]="placeholder"
@@ -15,5 +22,14 @@
         [required]="required"
         (focus)="onFocus()"
         (blur)="onBlur()"
+        [type]="type"
     />
+
+    <ng-container *ngIf="displayCustomContent('suffix')">
+       <ng-content  select="[suffix]"></ng-content>
+
+       <ng-template #suffix>
+        <!-- Default prefix content can go here if needed -->
+      </ng-template>
+    </ng-container>
 </admin-form-field>
