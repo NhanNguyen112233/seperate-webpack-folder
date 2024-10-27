@@ -1,13 +1,13 @@
-<div class="card">
+<!-- <div class="card"> -->
   <!-- Shell running Angular {{ version }} -->
-  <p>
+  <!-- <p>
     <a routerLink="/">Go to home page</a>
   </p>
   <p>
     <a routerLink="/mfe2/mfe-component"
       >Load MFE 1 app</a
     >
-  </p>
+  </p> -->
 
   <!-- <p>
     <a routerLink="/mfe3/mfe3-component"
@@ -15,9 +15,9 @@
     >
   </p> -->
 
-  <button (click)="loadEventService()">giao tiếp với shared lib và truyển msg tới app con</button>
+  <!-- <tpb-button 
+  type="submit"  (onClick)="loadEventService()">giao tiếp với shared lib và truyển msg tới app con</tpb-button >
 
-  <!-- <button (click)="viewEventService()">view event service loaded</button> -->
 
 
   <div *ngIf="loadContent">Event msg được giao tiếp thông qua sharedlib:<span style="color: red;">{{loadContent}}</span></div>
@@ -27,7 +27,6 @@
 
   <tpb-checkbox ></tpb-checkbox>
 
-  <div>
     <tpb-date-picker></tpb-date-picker>
 </div>
 <div>
@@ -40,5 +39,46 @@
 
 <div>
     <tpb-select></tpb-select>
-</div>v
 </div>
+
+<form [formGroup]="form" >
+
+  <div>
+      <tpb-input 
+          [errorMessage]="handleError('name')"
+          formControlName="name"
+          placeholder="Tất cả"
+      />
+      
+      
+
+      <tpb-select
+          [selectOptions]="selectOption"
+          formControlName="select"
+      />
+
+      <tpb-date-picker
+          formControlName="date"
+          errorMessage="Input không hợp lệ"
+      />
+
+  <tpb-button 
+  type="submit"  (onClick)="onSubmit()" appearance="primary">submit</tpb-button>
+  </div>
+</form>
+<tpb-input 
+[customContent]="'suffix'"
+[value]="noReactive.input"
+(onInputChange)="onInputChange($event)"
+[required]="true"
+placeholder="Tất cả">
+  <div prefix>
+      prefix
+  </div>
+  <div suffix>
+      suffix
+  </div>
+</tpb-input> -->
+
+<router-outlet></router-outlet>
+

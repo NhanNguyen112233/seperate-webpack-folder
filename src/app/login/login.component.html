@@ -1,0 +1,56 @@
+<div class="login-container">
+    <div class="login-content">
+        <div class="login-content-des">
+            <img src="../../assets/logo.svg" alt="logo" class="login-content-des__img"/>
+            
+            <h1 class="login-content-des__title">Đăng nhập hệ thống Product Layer</h1>    
+        </div>
+        <div class="login-content-form">
+            <!-- bind ng-submit into form-input -->
+            <form [formGroup]="form" >
+               
+                <h2 class="login-content-form__title">Tên đăng nhập <span class="login-content-form__mark">*</span></h2>
+ <!-- //add background to common  and set transparent to msg bg-->
+                <div class="login-content-form__input">
+                    <tpb-input 
+                        [errorMessage]="handleError('username')"
+                        formControlName="username"
+                        placeholder="Ví dụ: GiangBQ"
+                    ></tpb-input>
+                </div>
+
+                <h2 class="login-content-form__title">Mật khẩu <span class="login-content-form__mark">*</span></h2>
+ <!-- //add background to common  and set transparent to msg bg-->
+                <div class="login-content-form__input">
+                    <tpb-input 
+                        [errorMessage]="handleError('password')"
+                        formControlName="password"
+                        placeholder="Nhập mật khẩu"
+                        [type]="'password'"
+                    ></tpb-input>
+                </div>
+
+                <h2 class="login-content-form__title">Mã eToken+ cơ bản <span class="login-content-form__mark">*</span></h2>
+ <!-- //add background to common  and set transparent to msg bg-->
+                <div class="login-content-form__input">
+                    <tpb-input 
+                        [errorMessage]="handleError('eToken')"
+                        formControlName="eToken"
+                        placeholder="Ví dụ: 95152"
+                    ></tpb-input>
+                </div>
+
+
+                <div class="login-content-form__action">
+                    <tpb-button 
+                        type="submit" 
+                        appearance="primary"
+                        (onClick)="onSubmit()"
+                    >
+                        Đăng nhập
+                    </tpb-button>
+                </div>
+                </form>
+        </div>
+    </div>
+</div>

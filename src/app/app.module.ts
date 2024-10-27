@@ -14,7 +14,7 @@ import {
   InputComponent,
   SelectComponent,
 } from 'admin-core-web-libs';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { enviroment } from '@config/enviroment';
 
@@ -24,6 +24,7 @@ import { enviroment } from '@config/enviroment';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     CommonModule,
     AppRoutingModule,

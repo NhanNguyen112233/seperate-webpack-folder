@@ -7,7 +7,8 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "skipTests": true
         }
       },
       "root": "",
@@ -30,11 +31,13 @@
                 "input": "public",
                 "output": "."
               },
-              "src/config"
+              "src/config",
+               "src/assets"
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/admin-core-web-libs/src/lib/styles.scss"
+              "node_modules/admin-core-web-libs/src/lib/styles.scss",
+              "@angular/material/prebuilt-themes/azure-blue.css"
             ],
             "scripts": [],
             "main": "src/main.ts",

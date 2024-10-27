@@ -6,6 +6,11 @@ import { loadRemoteModuleWithManifest } from '@utils/manifest-loader';
 
 const routes: Routes = [
   {
+    path: 'login',
+    loadComponent: () =>
+      import('./login/login.component').then((m) => m.LoginComponent),
+  },
+  {
     path: 'mfe2',
     loadChildren: () =>
       loadRemoteModuleWithManifest('mfe2')
