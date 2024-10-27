@@ -52,6 +52,7 @@ export class InputComponent
   @Input() maxLength: number = DEFAULT_INPUT_CONFIG.maxLength;
   @Input() required: boolean = false;
   @Input() errorMessage: string = '';
+  @Input() type: string = 'text';
 
   @Output() onInputChange = new EventEmitter<string>();
 

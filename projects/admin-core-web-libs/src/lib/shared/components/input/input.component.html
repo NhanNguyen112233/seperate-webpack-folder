@@ -6,7 +6,7 @@
     <input 
         [(ngModel)]="value"
         (ngModelChange)="onChangeValue($event)"
-        type="text"
+        [type]="type"
         adminInput
         [fullWidth]="true"
         [placeholder]="placeholder"
