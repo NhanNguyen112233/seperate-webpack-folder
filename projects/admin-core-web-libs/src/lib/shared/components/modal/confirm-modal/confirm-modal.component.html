@@ -1,0 +1,24 @@
+<div class="admin-confirm-modal">
+    <div class="admin-confirm-modal-title">
+        {{modalData.title}}
+    </div>
+    <div class="admin-confirm-modal-description">
+        {{modalData.description}}
+    </div>
+    &nbsp;
+    <div class="admin-confirm-modal-action">
+       <ng-container *ngIf="modalData.confirmText">
+            <tpb-button 
+                type="submit"  (onClick)="handleConfirm()" appearance="primary">
+                {{modalData.confirmText}}
+            </tpb-button>
+       </ng-container>
+
+       <ng-container *ngIf="modalData.cancelText">
+        <tpb-button 
+            type="submit"  (onClick)="handleCancel()" appearance="primary">
+                {{modalData.cancelText}}
+        </tpb-button>
+   </ng-container>
+    </div>
+</div>

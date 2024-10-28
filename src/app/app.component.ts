@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ButtonComponent } from '../../projects/admin-core-web-libs/src/public-api';
+import {
+  AdminModalService,
+  ButtonComponent,
+} from '../../projects/admin-core-web-libs/src/public-api';
 import { DatePickerComponent } from '../../projects/admin-core-web-libs/src/lib/shared/components/date-picker/date-picker.component';
 import { InputComponent } from '../../projects/admin-core-web-libs/src/lib/shared/components/input/input.component';
 import { CheckboxComponent } from '../../projects/admin-core-web-libs/src/lib/shared/components/checkbox/checkbox.component';
@@ -17,6 +20,7 @@ import {
 import { TextAreaComponent } from 'projects/admin-core-web-libs/src/lib/shared/components/text-area/text-area.component';
 import { DateAdapter } from '@angular/material/core';
 import { CustomDateAdapter } from 'dist/admin-core-web-libs/lib/shared/components/date-picker/date-picker-adapter';
+import { MatDialog } from '@angular/material/dialog';
 // import { AdminCoreWebLibModule } from 'dist/admin-core-web-libs';
 
 export function dateValidator(adapter: DateAdapter<Date>): ValidatorFn {
@@ -94,7 +98,7 @@ export class AppComponent {
 
   onSubmit() {
     console.log('clicked');
-
+    this.openDialog();
     this.form.markAllAsTouched();
     if (this.form.valid) {
       console.log(this.form.getRawValue());
@@ -114,5 +118,23 @@ export class AppComponent {
       default:
         return '';
     }
+  }
+
+  readonly dialog = inject(AdminModalService);
+
+  openDialog(): void {
+    const dialogRef = this.dialog.openConfirmModal({
+      data: {
+        title: 'Thông báo',
+        description:
+          'Tên đăng nhập và mật khẩu chưa chính xác hoặc tài khoản đã tạm khóa. Vui lòng kiểm tra lại.',
+        confirmText: '',
+        cancelText: 'Đóng',
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed', result);
+    });
   }
 }

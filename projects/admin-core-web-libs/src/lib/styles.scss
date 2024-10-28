@@ -51,3 +51,11 @@ html{
    color:var(--purple-7);
 }
 
+::ng-deep .cdk-overlay-dark-backdrop {
+   background: var(--black-1) !important;
+   transform: matrix(-1, 0, 0, 1, 0, 0)!important;
+}
+
+::ng-deep.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+   opacity: 0.7 !important;
+}
