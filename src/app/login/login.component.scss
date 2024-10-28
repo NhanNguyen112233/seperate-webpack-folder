@@ -6,7 +6,10 @@
     background-size: cover; /* or contain, depending on your needs */
     width: 100vw;
     height: 100vh;
-
+    position: fixed;
+    background-position: center;
+    background-size: cover;
+    
     display: flex;
     justify-content: center;
     align-items: center;
