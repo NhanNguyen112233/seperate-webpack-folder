@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
   AdminCoreWebLibModule,
+  AdminModalService,
+  // AdminIconRegisterService,
   ButtonComponent,
   CheckboxComponent,
   DatePickerComponent,
@@ -17,6 +19,8 @@ import {
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { enviroment } from '@config/enviroment';
+import { zip } from 'rxjs';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +29,7 @@ import { enviroment } from '@config/enviroment';
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    // AdminIconRegisterService,
     FormsModule,
     CommonModule,
     AppRoutingModule,
@@ -33,7 +38,7 @@ import { enviroment } from '@config/enviroment';
     SelectComponent,
     DatePickerComponent,
     CheckboxComponent,
-
+    MatDialogModule,
     InputComponent,
   ],
   providers: [],

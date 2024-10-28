@@ -1,0 +1,15 @@
+@import  "node_modules/admin-core-web-libs/src/lib/styles.scss";
+
+.form-wrapper{
+    &-title{
+        margin-bottom: toRem(4px);
+    }
+
+    &-mark{
+        color:red;
+    }
+
+    &-input{
+        margin-bottom: toRem(20px);
+    }
+}

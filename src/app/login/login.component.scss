@@ -42,19 +42,6 @@
         box-sizing: border-box;
         padding: toRem(24px);
 
-        &__title{
-            margin-bottom: toRem(4px);
-        }
-
-
-        &__mark{
-            color:red;
-        }
-
-        &__input{
-            margin-bottom: toRem(20px);
-        }
-
         &__action{
             display: flex;
             justify-content: center;
@@ -62,8 +49,4 @@
         }
       }
  }
-}
-
-::ng-deep .form-field{
-    background-color: var(--white-1);
 }

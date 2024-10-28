@@ -1,0 +1,9 @@
+<div class="form-wrapper">
+    <h2 class="form-wrapper-title">{{title}} 
+        <span *ngIf="required" class="form-wrapper-mark">*</span>
+    </h2>
+
+    <div class="form-wrapper-input">
+        <ng-content></ng-content>
+    </div>
+</div>

@@ -1,7 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterOutlet } from '@angular/router';
-import { AdminCommunicateService, AdminEvent } from 'admin-core-web-libs';
+import {
+  AdminCommunicateService,
+  AdminEvent,
+  AdminIconRegisterService,
+} from 'admin-core-web-libs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
