@@ -30,11 +30,11 @@
         margin-top:toRem(4px);
         margin-bottom:toRem(4px);
         background: transparent;
+        font-size: toRem(12px);
+        line-height: toRem(16px);
     }
 
     &-error {
-        font-size: toRem(12px);
-        line-height: toRem(16px);
         border-color: var(--red-1);
     }
 }
