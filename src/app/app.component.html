@@ -7,6 +7,7 @@
 </div>
 <div>
     <tpb-input 
+    [customContent]="'suffix'"
     [value]="noReactive.input"
     (onInputChange)="onInputChange($event)"
     [required]="true"
@@ -65,3 +66,7 @@
 </form>
 <div>nhan dep trai</div>
 </div>
+
+<lib-menu></lib-menu>
+
+<router-outlet></router-outlet>

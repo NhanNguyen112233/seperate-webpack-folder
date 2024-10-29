@@ -21,8 +21,14 @@ import { TextAreaComponent } from 'projects/admin-core-web-libs/src/lib/shared/c
 import { DateAdapter } from '@angular/material/core';
 import { CustomDateAdapter } from 'dist/admin-core-web-libs/lib/shared/components/date-picker/date-picker-adapter';
 import { MatDialog } from '@angular/material/dialog';
+import { MenuComponent } from 'projects/admin-core-web-libs/src/lib/shared/template/menu/menu.component';
 // import { AdminCoreWebLibModule } from 'dist/admin-core-web-libs';
-
+interface MenuItem {
+  label: string;
+  icon?: string;
+  link?: string;
+  children?: MenuItem[];
+}
 export function dateValidator(adapter: DateAdapter<Date>): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const value = control.value;
@@ -50,6 +56,7 @@ export function dateValidator(adapter: DateAdapter<Date>): ValidatorFn {
     CheckboxComponent,
     SelectComponent,
     TextAreaComponent,
+    MenuComponent,
     // AdminCoreWebLibModule.forRoot({}) // Moved to the application's main module or bootstrap
   ],
   templateUrl: './app.component.html',

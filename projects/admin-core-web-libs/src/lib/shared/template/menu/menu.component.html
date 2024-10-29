@@ -1,0 +1,5 @@
+<div>
+    <input type="text" placeholder="Search..." [(ngModel)]="searchQuery" (input)="filterMenu()">
+  </div>
+
+  <app-menu-item [items]="filteredMenuItems" [activeUrl]="activeUrl"></app-menu-item>

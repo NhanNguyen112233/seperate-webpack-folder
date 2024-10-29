@@ -1,0 +1,16 @@
+<ul>
+    <ng-container *ngFor="let item of items">
+      <li [class.active]="isActive(item)">
+        <a (click)="toggleCollapse(item)" [routerLink]="item.link">
+          <i class="material-icons">{{ item.icon }}</i>
+          {{ item.label }}
+          <span *ngIf="item.children" class="toggle-icon">
+            {{ item.collapsed ? 'expand_more' : 'expand_less' }}
+          </span>
+        </a>
+        <ul *ngIf="item.children && !item.collapsed">
+          <app-menu-item [items]="item.children" [activeUrl]="activeUrl"></app-menu-item>
+        </ul>
+      </li>
+    </ng-container>
+  </ul>
