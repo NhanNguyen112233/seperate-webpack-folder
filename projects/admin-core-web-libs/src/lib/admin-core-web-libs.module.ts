@@ -39,7 +39,10 @@ export class AdminCoreWebLibModule {
       ngModule: AdminCoreWebLibModule,
       providers: [
         AdminIconRegisterService,
-
+        {
+          provide:'env',
+          useValue:environment
+        }
         // Add any services that need to be singleton here
       ],
     };
