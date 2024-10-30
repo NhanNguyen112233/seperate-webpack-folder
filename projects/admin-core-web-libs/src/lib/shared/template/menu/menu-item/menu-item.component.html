@@ -1,11 +1,19 @@
 <ul>
     <ng-container *ngFor="let item of items">
-      <li [class.active]="isActive(item)">
+      <li [class.active]="isActive(item)" [class.first-active]="level===1 && isActive(item)">
+        
         <a (click)="toggleCollapse(item)" [routerLink]="item.link">
-          <i class="material-icons">{{ item.icon }}</i>
-          {{ item.label }}
-          <span *ngIf="item.children" class="toggle-icon">
-            {{ item.collapsed ? 'expand_more' : 'expand_less' }}
+          <ng-container *ngIf="level===1">
+            <mat-icon [ngClass]="getIconClass(item)" style="width: 16px; height: 16px;" [svgIcon]="genIcon(item)"></mat-icon>
+            &nbsp;
+            &nbsp;
+          </ng-container>
+         <span> {{ item.label }}</span>
+
+          <span *ngIf="item.children && item.children.length>0" class="toggle-icon" 
+            [ngClass]="item.collapsed ? 'rotate-360' : 'rotate-180'"
+            >
+            <mat-icon svgIcon="admin-arrow-down"></mat-icon>
           </span>
         </a>
         <ul *ngIf="item.children && !item.collapsed">

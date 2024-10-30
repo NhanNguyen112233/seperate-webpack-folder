@@ -1,0 +1,16 @@
+.layout {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+  }
+  
+  .left-menu {
+    width: 240px;
+    background-color: #f4f4f4; /* Background color for the left menu */
+    padding: 16px; /* Padding for the left menu */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow for the left menu */
+  }
+  
+  .content {
+   width: calc(100% - 240px); /* Width of the content area */
+   margin-left: 240px; /* Width of the left menu */
+  }

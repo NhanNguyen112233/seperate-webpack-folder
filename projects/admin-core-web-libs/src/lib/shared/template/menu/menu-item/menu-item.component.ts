@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 export interface MenuItem {
@@ -12,17 +13,18 @@ export interface MenuItem {
 @Component({
   selector: 'app-menu-item',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, MatIconModule],
+  providers: [],
   templateUrl: './menu-item.component.html',
   styleUrl: './menu-item.component.scss',
 })
 export class MenuItemComponent {
   @Input() items!: MenuItem[];
   @Input() activeUrl!: string;
+  @Input() level: number = 0;
+  @ViewChild('icon', { static: true }) icon!: ElementRef;
 
   isActive(item: MenuItem): boolean {
-    console.log('this.activeUrl', this.activeUrl);
-
     if (item.link && this.activeUrl === item.link) {
       return true;
     }
@@ -34,5 +36,13 @@ export class MenuItemComponent {
 
   toggleCollapse(item: MenuItem): void {
     item.collapsed = !item.collapsed;
+  }
+
+  genIcon(item: MenuItem): string {
+    return `admin-${item.icon}`;
+  }
+
+  getIconClass(item: MenuItem): string {
+    return this.isActive(item) ? 'icon-active' : 'icon-not-active';
   }
 }

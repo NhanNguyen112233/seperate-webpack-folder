@@ -34,6 +34,15 @@ export const routes: Routes = [
   { path: 'products/clothing/women/dresses', component: DressesComponent },
   { path: 'products/clothing/women/shoes', component: ShoesComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'fee', component: AboutComponent },
+
+  { path: 'tpb', component: AboutComponent },
+
+  { path: 'cutomer-group', component: AboutComponent },
+  { path: 'connect', component: AboutComponent },
+  { path: 'config', component: AboutComponent },
+  { path: 'approve', component: AboutComponent },
+
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
   { path: '**', redirectTo: '/home' }, // Wildcard route for a 404 page
 ];

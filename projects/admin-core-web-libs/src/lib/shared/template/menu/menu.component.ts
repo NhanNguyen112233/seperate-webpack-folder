@@ -1,81 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MenuItem, MenuItemComponent } from './menu-item/menu-item.component';
 import { NavigationEnd, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { InputDirective } from '../../directive/input/input.directive';
 
 @Component({
-  selector: 'lib-menu',
+  selector: 'admin-menu',
   standalone: true,
-  imports: [MenuItemComponent, FormsModule],
+  imports: [MenuItemComponent, FormsModule, MatIconModule, InputDirective],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
 })
-export class MenuComponent implements OnInit {
+export class AdminMenuComponent implements OnInit {
   searchQuery: string = '';
   filteredMenuItems: MenuItem[] = [];
-  menuItems: MenuItem[] = [
-    {
-      label: 'Home',
-      icon: 'home',
-      link: '/home',
-    },
-    {
-      label: 'Products',
-      icon: 'shopping_cart',
-      children: [
-        {
-          label: 'Electronics',
-          children: [
-            {
-              label: 'Mobile Phones',
-              link: '/products/electronics/mobile-phones',
-            },
-            {
-              label: 'Laptops',
-              children: [
-                {
-                  label: 'Gaming Laptops',
-                  link: '/products/electronics/laptops/gaming',
-                },
-                {
-                  label: 'Business Laptops',
-                  link: '/products/electronics/laptops/business',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          label: 'Clothing',
-          children: [
-            {
-              label: 'Men',
-              link: '/products/clothing/men',
-            },
-            {
-              label: 'Women',
-              children: [
-                {
-                  label: 'Dresses',
-                  link: '/products/clothing/women/dresses',
-                },
-                {
-                  label: 'Shoes',
-                  link: '/products/clothing/women/shoes',
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      label: 'About',
-      icon: 'info',
-      link: '/about',
-    },
-  ];
+
+  @Input() menuItems: MenuItem[] = [];
 
   activeUrl!: string;
 
@@ -89,9 +31,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.activeUrl = this.router.url;
-    console.log('router', this.router);
-
-    console.log('activeUrl', this.activeUrl);
+    this.filteredMenuItems = this.menuItems;
   }
 
   filterMenu(): void {

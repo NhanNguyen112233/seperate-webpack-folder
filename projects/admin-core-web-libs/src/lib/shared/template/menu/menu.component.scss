@@ -1,0 +1,75 @@
+@import '../../../styles.scss';
+
+.menu {
+    background-color: var(--purple-1);
+    position: fixed;
+    top:0;
+    left: 0;
+    width: toRem(240px);
+    height: 100vh;
+
+    &-header {
+        padding: toRem(12px);
+        box-sizing: border-box;
+        &__logo {
+            width: toRem(104px);
+            height: toRem(24px);
+            margin-bottom: toRem(12px);
+        }
+
+        &__search {
+            width: 100%;
+            border: toRem(4px);
+            background-color: var(--purple-5);
+            display:inline-flex;
+            flex-direction: row;
+            padding:toRem(7px) toRem(12px);
+            height: toRem(36px);
+            box-sizing: border-box;
+            align-items: center;
+            border-radius: toRem(4px);
+            &-icon {
+                width: toRem(16px);
+                height: toRem(16px);
+            }
+
+            &-input {
+                background:transparent;
+                border: none;
+                user-select: none;
+                outline: none;
+                color: var(--purple-12);
+
+                &::placeholder {
+                    color: var(--purple-12);
+                }
+            }
+        }
+
+        
+    }
+
+    &-select {
+        height: calc(100vh - toRem(96px));
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: toRem(4px);
+          }
+        
+          &::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius:0 toRem(4px) toRem(4px) 0;
+          }
+        
+          &::-webkit-scrollbar-thumb {
+            background-color: transparent;
+            border-radius: toRem(4px);
+            border: 3px solid var(--purple-12);
+          }
+        
+          &::-webkit-scrollbar-thumb:hover {
+            background-color: transparent
+          }
+    }
+}

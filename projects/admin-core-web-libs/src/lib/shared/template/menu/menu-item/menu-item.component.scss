@@ -1,37 +1,101 @@
+@import '../../../../styles';
+
 ul {
-    list-style-type: none;
-    padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  padding: 0;
   }
   
   li {
-    margin: 5px 0;
+    // margin: 5px 0;
+
+
+
+    &:hover {
+      transition: all ease 0.3s;
+      cursor: pointer;
+
+      &>a {
+        color: var(--white-1);
+        // background-color: var(--purple-8);
+        
+      }
+    }
+
+    
   }
   
   a {
-    text-decoration: none;
-    color: black;
+    color: var(--purple-12);
+    box-sizing: border-box;
+    min-height: toRem(40px);
+    font-style: normal;
+    font-weight: 400;
+    width: 100%;
+    padding: toRem(12px);
     display: flex;
     align-items: center;
-    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
   }
   
-  a:hover {
-    color: blue;
-  }
   
   .material-icons {
     margin-right: 8px;
   }
   
-  ul ul {
-    margin-left: 20px;
+  ul ul>li  {
+    padding-left: toRem(24px);
   }
   
+  li.first-active>a{
+    background-color: var(--purple-8);
+
+    &:hover {
+      transition: all ease 0.3s;
+      cursor: pointer;
+
+      &>a {
+        color: var(--white-1);
+        background-color: var(--purple-8);
+        
+      }
+    }
+  }
+
   li.active > a {
-    font-weight: bold;
-    color: red;
+    color: var(--white-1);
+    // background-color: var(--purple-8);
   }
   
   .toggle-icon {
     margin-left: auto;
+  }
+
+  .rotate-0 {
+    transform: rotate(0deg);
+  }
+  
+  .rotate-90 {
+    transform: rotate(90deg);
+  }
+  
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+  
+  .rotate-270 {
+    transform: rotate(270deg);
+  }
+  
+  .rotate-360 {
+    transform: rotate(360deg);
+  }
+  
+  ::ng-deep .icon-active svg path {
+    fill: var(--orange-1);
+  }
+
+  ::ng-deep .icon-not-active svg path {
+    fill: var(--purple-4);
   }

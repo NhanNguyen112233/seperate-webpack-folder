@@ -21,7 +21,9 @@ import { TextAreaComponent } from 'projects/admin-core-web-libs/src/lib/shared/c
 import { DateAdapter } from '@angular/material/core';
 import { CustomDateAdapter } from 'dist/admin-core-web-libs/lib/shared/components/date-picker/date-picker-adapter';
 import { MatDialog } from '@angular/material/dialog';
-import { MenuComponent } from 'projects/admin-core-web-libs/src/lib/shared/template/menu/menu.component';
+import { AdminMenuComponent } from 'projects/admin-core-web-libs/src/lib/shared/template/menu/menu.component';
+import { AdminMainLayoutComponent } from 'projects/admin-core-web-libs/src/lib/shared/template/admin-main-layout/admin-main-layout.component';
+import { MatIconModule } from '@angular/material/icon';
 // import { AdminCoreWebLibModule } from 'dist/admin-core-web-libs';
 interface MenuItem {
   label: string;
@@ -56,7 +58,9 @@ export function dateValidator(adapter: DateAdapter<Date>): ValidatorFn {
     CheckboxComponent,
     SelectComponent,
     TextAreaComponent,
-    MenuComponent,
+    AdminMenuComponent,
+    AdminMainLayoutComponent,
+    MatIconModule,
     // AdminCoreWebLibModule.forRoot({}) // Moved to the application's main module or bootstrap
   ],
   templateUrl: './app.component.html',
