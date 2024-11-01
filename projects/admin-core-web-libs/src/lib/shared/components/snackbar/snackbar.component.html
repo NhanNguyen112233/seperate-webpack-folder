@@ -1,0 +1,17 @@
+<div class="admin-snackbar">
+    <div class="admin-snackbar-prefix">
+        <mat-icon  [svgIcon]="parseAdminPrefix()"></mat-icon>
+    </div>
+    <div class="admin-snackbar-content">
+        <div [ngClass]="parseContenttNoti('class')">
+            {{parseContenttNoti('title')}}
+        </div>
+
+        <div class="admin-snackbar-description">
+            {{data.message}}
+        </div>
+    </div>
+    <div class="admin-snackbar-suffix">
+        <mat-icon  (click)="closeSnackbar()">close</mat-icon>
+    </div>
+</div>

@@ -10,6 +10,7 @@
   },
   "sideEffects": false,
   "exports": {
-    "./styles.scss": "./lib/styles.scss"
+    "./styles.scss": "./lib/styles.scss",
+    "./loading.gif": "./lib/shared/assets/admin-loading.gif"
   }
 }

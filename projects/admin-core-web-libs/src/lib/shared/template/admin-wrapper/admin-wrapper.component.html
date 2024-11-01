@@ -1,0 +1,10 @@
+<div class="admin-layout-wrapper">
+    <ng-content></ng-content>
+    <!-- <button (click)="load(true)">turn on</button>
+    <button (click)="load(false)">turn off</button> -->
+   <ng-container *ngIf="isLoading">
+        <div class="admin-loading">
+            <img class="admin-loading-img" src="../../assets/admin-loading.gif" alt="loading-spinner">
+        </div>
+   </ng-container>
+</div>

@@ -1,0 +1,43 @@
+@import '../../../styles.scss';
+.admin-snackbar {
+    display: inline-flex;
+    width:100%;
+    color: var(--purple-7);
+    align-items: center;
+    
+    &-prefix{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width:36px;
+    }
+
+    &-content {
+        width: calc(100% - 72px);
+    }
+
+    &-suffix{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:36px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.snackbar-title{
+
+    &-success{
+        color: var(--green-1);
+    }
+
+    &-error{
+        color: var(--red-1);
+    }
+
+    &-warning{
+        color: var(--orange-1);
+    }
+}

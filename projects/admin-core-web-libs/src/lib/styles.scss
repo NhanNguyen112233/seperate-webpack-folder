@@ -39,11 +39,13 @@
 
   --green-1: #34C759;
   --green-2: #17C37B;
+  --green-3:#E8F9EC;
 }
 
 html *{
    font-family: Roboto, "Helvetica Neue", sans-serif;
    line-height: 20px;
+   font-size: 16px ;
 }
 
 html{
@@ -58,4 +60,39 @@ html{
 
 ::ng-deep.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
    opacity: 0.7 !important;
+}
+
+
+::ng-deep .mdc-snackbar__label {
+   padding: 12px 8px 12px 16px;
+}
+
+// classes
+ ::ng-deep.snackbar {
+   &-success .mat-mdc-snackbar-surface {
+      border-radius:toRem(4px);
+      background: var(--green-3)!important;
+      position: relative;
+      &::after{
+         position: absolute;
+         background-color: var(--green-1);
+         content:'';
+         top: 0;
+         left: 0;
+         bottom: 0;
+         border-radius: 4px 0 0 4px;
+         width: toRem(4px);
+ 
+     }
+  }
+
+   &-error .mat-mdc-snackbar-surface{
+      border-radius:toRem(4px); 
+      background: var(--red-3)!important;
+   }
+
+   &-warning  .mat-mdc-snackbar-surface{
+      border-radius:toRem(4px); 
+      background: var(--orange-2)!important;
+   }
 }

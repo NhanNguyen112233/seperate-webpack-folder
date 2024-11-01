@@ -61,6 +61,7 @@ export function dateValidator(adapter: DateAdapter<Date>): ValidatorFn {
     AdminMenuComponent,
     AdminMainLayoutComponent,
     MatIconModule,
+
     // AdminCoreWebLibModule.forRoot({}) // Moved to the application's main module or bootstrap
   ],
   templateUrl: './app.component.html',

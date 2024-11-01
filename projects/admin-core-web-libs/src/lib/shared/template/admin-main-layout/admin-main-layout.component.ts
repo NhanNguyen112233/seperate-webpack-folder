@@ -47,7 +47,7 @@ export class AdminMainLayoutComponent {
     },
     {
       label: 'Quản lý phân khúc KH',
-      icon: 'cutomer-group',
+      icon: 'customer-group',
       link: '/cutomer-group',
     },
     {
