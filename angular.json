@@ -32,6 +32,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/admin-core-web-libs/src/lib/shared/assets",
+                "output": "assets"
               }
             ],
             "styles": [
