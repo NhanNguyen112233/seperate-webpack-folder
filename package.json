@@ -7,10 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "clean-npm": "rimraf ./node_modules",
-    "clean-package-lock": "rimraf ./package-lock.json",
-    "pack-dist": "cd ./dist/admin-core-web-libs && npm pack",
-    "clean-cache": "npm run clean-npm && npm run clean-package-lock && npm install"
+    "core-lib-setup": "npm install admin-core-web-libs@file:libs/admin-core-web-libs-0.0.1.tgz"
   },
   "private": true,
   "dependencies": {
