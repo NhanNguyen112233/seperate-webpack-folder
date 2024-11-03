@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { AdminLoadingService } from './../../services/admin-loading.service';
 import { Component, OnInit } from '@angular/core';
+import { AdminIconRegisterService } from '../../services/admin-icon-register.service';
 /**
  * This will carry some information of the app like appversion,etc..
  */
@@ -13,7 +14,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminWrapperComponent implements OnInit {
   isLoading!: boolean;
-  constructor(private adminLoadingService: AdminLoadingService) {}
+  constructor(
+    private adminLoadingService: AdminLoadingService,
+    private adminIcon: AdminIconRegisterService
+  ) {}
   ngOnInit(): void {
     this.adminLoadingService.loading.subscribe((loading: boolean) => {
       this.isLoading = loading;
