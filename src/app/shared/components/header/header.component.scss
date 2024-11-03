@@ -1,0 +1,18 @@
+@import  "node_modules/admin-core-web-libs/src/lib/styles.scss";
+
+.admin-header {
+    display: inline-flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding-top:toRem(16px);
+    padding-bottom: toRem(16px);  
+    min-height: toRem(80px);
+
+    &-title {
+        font-size: toRem(20px);
+        line-height: toRem(28px);
+        font-weight: 500;
+        display: inline-flex;
+       align-items: center ;
+    }
+}

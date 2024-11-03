@@ -13,32 +13,13 @@ import {
 })
 export class AppComponent implements OnInit {
   title = 'host-app';
-  loadContent = '';
-  form!: FormGroup;
-  noReactive = {
-    input: '',
-  };
-  onInputChange(e: any) {
-    console.log('e', e);
-  }
+
   constructor(
     @Inject(AdminCommunicateService)
     private adminCommunicateService: AdminCommunicateService,
-    private router: Router,
-    //remove
-    private fb: FormBuilder
-  ) {
-    //remove
-    this.form = this.fb.group({
-      name: [
-        { value: '', disabled: false },
-        [Validators.required, Validators.maxLength(10)],
-      ],
-      des: ['', [Validators.required]],
-      select: ['', [Validators.required]],
-      date: [new Date(), []],
-    });
-  }
+    private adminIcon: AdminIconRegisterService,
+    private router: Router //remove
+  ) {}
 
   ngOnInit() {
     this.viewEventService();
@@ -56,53 +37,6 @@ export class AppComponent implements OnInit {
   }
 
   viewEventService() {
-    this.adminCommunicateService.getEvent().subscribe((data: AdminEvent) => {
-      console.log('data', data);
-
-      this.loadContent = data.data;
-    });
+    this.adminCommunicateService.getEvent().subscribe((data: AdminEvent) => {});
   }
-
-  onSubmit() {
-    console.log('clicked');
-
-    this.form.markAllAsTouched();
-    if (this.form.valid) {
-      console.log(this.form.getRawValue());
-    }
-  }
-
-  handleError(formControlName: string) {
-    switch (formControlName) {
-      case 'name':
-        if (this.form.get('name')?.hasError('required')) {
-          return 'Name is required';
-        } else if (this.form.get('name')?.hasError('maxlength')) {
-          return 'Name should not exceed 10 characters';
-        } else {
-          return '';
-        }
-      default:
-        return '';
-    }
-  }
-
-  selectOption = [
-    {
-      label: 'Tất cả',
-      value: 'ALL',
-    },
-    {
-      label: 'Option 1',
-      value: 1,
-    },
-    {
-      label: 'Option 2',
-      value: 2,
-    },
-    {
-      label: 'Option 3',
-      value: 3,
-    },
-  ];
 }

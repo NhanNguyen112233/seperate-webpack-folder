@@ -15,6 +15,7 @@ import {
   AdminModalService,
   ButtonComponent,
   InputComponent,
+  TextAreaComponent,
 } from 'admin-core-web-libs';
 import { SharedModule } from '../shared/shared.module';
 import { MatIconModule } from '@angular/material/icon';
@@ -30,6 +31,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatDialogModule,
     AdminConfirmModalComponent,
+    TextAreaComponent,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',

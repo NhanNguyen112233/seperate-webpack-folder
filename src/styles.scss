@@ -1,2 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import  "node_modules/admin-core-web-libs/src/lib/styles.scss"
+@import  "node_modules/admin-core-web-libs/src/lib/styles.scss";
+
+.admin-container {
+    padding-left: toRem(24px); // Assuming 1rem = 16px
+    padding-right: toRem(24px);
+}

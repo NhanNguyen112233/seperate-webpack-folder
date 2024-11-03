@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   AdminCoreWebLibModule,
   AdminModalService,
+  AdminWrapperComponent,
   // AdminIconRegisterService,
   ButtonComponent,
   CheckboxComponent,
@@ -21,6 +22,7 @@ import { CommonModule } from '@angular/common';
 import { enviroment } from '@config/enviroment';
 import { zip } from 'rxjs';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +34,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     // AdminIconRegisterService,
     FormsModule,
     CommonModule,
+    MatIconModule,
     AppRoutingModule,
     AdminCoreWebLibModule.forRoot(enviroment),
     ButtonComponent,
@@ -40,6 +43,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     CheckboxComponent,
     MatDialogModule,
     InputComponent,
+    AdminWrapperComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
