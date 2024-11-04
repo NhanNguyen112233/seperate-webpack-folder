@@ -23,6 +23,7 @@ import {
   SelectComponent,
   TextAreaComponent,
 } from 'admin-core-web-libs';
+import { PreventCharactersDirective } from './directive/prevent-character';
 // import { AdminCoreWebLibModule } from 'dist/admin-core-web-libs';
 interface MenuItem {
   label: string;
@@ -60,7 +61,7 @@ export function dateValidator(adapter: DateAdapter<Date>): ValidatorFn {
     AdminMenuComponent,
     AdminMainLayoutComponent,
     MatIconModule,
-
+    PreventCharactersDirective,
     // AdminCoreWebLibModule.forRoot({}) // Moved to the application's main module or bootstrap
   ],
   templateUrl: './app.component.html',

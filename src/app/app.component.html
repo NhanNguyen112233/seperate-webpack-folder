@@ -13,6 +13,7 @@
 </div>
 <div>
     <tpb-input 
+    appPreventCharacters
     [customContent]="'suffix'"
     [value]="noReactive.input"
     (onInputChange)="onInputChange($event)"
@@ -46,12 +47,14 @@
 
     <div>
         <tpb-input 
+            appPreventCharacters
             [errorMessage]="handleError('name')"
             formControlName="name"
             placeholder="Tất cả"
         />
         
         <tpb-text-area
+            appPreventCharacters
             formControlName="des"
             placeholder="2"
         />

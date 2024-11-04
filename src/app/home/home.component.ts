@@ -9,7 +9,7 @@ import {
   selector: 'lib-home',
   standalone: true,
   imports: [AdminWrapperComponent],
-  providers: [SnackbarService, AdminLoadingService],
+  providers: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
