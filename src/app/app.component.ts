@@ -1,14 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
-  AdminModalService,
-  ButtonComponent,
-} from '../../projects/admin-core-web-libs/src/public-api';
-import { DatePickerComponent } from '../../projects/admin-core-web-libs/src/lib/shared/components/date-picker/date-picker.component';
-import { InputComponent } from '../../projects/admin-core-web-libs/src/lib/shared/components/input/input.component';
-import { CheckboxComponent } from '../../projects/admin-core-web-libs/src/lib/shared/components/checkbox/checkbox.component';
-import { SelectComponent } from 'projects/admin-core-web-libs/src/lib/shared/components/select/select.component';
-import {
   AbstractControl,
   FormBuilder,
   FormGroup,
@@ -17,13 +9,20 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { TextAreaComponent } from 'projects/admin-core-web-libs/src/lib/shared/components/text-area/text-area.component';
 import { DateAdapter } from '@angular/material/core';
-import { CustomDateAdapter } from 'dist/admin-core-web-libs/lib/shared/components/date-picker/date-picker-adapter';
 import { MatDialog } from '@angular/material/dialog';
-import { AdminMenuComponent } from 'projects/admin-core-web-libs/src/lib/shared/template/menu/menu.component';
-import { AdminMainLayoutComponent } from 'projects/admin-core-web-libs/src/lib/shared/template/admin-main-layout/admin-main-layout.component';
 import { MatIconModule } from '@angular/material/icon';
+import {
+  AdminMainLayoutComponent,
+  AdminMenuComponent,
+  AdminModalService,
+  ButtonComponent,
+  CheckboxComponent,
+  DatePickerComponent,
+  InputComponent,
+  SelectComponent,
+  TextAreaComponent,
+} from 'admin-core-web-libs';
 // import { AdminCoreWebLibModule } from 'dist/admin-core-web-libs';
 interface MenuItem {
   label: string;

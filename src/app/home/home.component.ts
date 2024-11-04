@@ -1,7 +1,9 @@
-import { AdminWrapperComponent } from 'projects/admin-core-web-libs/src/lib/shared/template/admin-wrapper/admin-wrapper.component';
-import { SnackbarService } from '../../../projects/admin-core-web-libs/src/lib/shared/services/admin-snackbar.service';
 import { Component, inject, Inject, OnInit } from '@angular/core';
-import { AdminLoadingService } from 'projects/admin-core-web-libs/src/lib/shared/services/admin-loading.service';
+import {
+  AdminLoadingService,
+  AdminWrapperComponent,
+  SnackbarService,
+} from 'admin-core-web-libs';
 
 @Component({
   selector: 'lib-home',
