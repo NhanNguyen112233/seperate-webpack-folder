@@ -13,35 +13,47 @@ import { ShoesComponent } from './shoes/shoes.component';
 import { AboutComponent } from './about/about.component';
 
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'products/electronics', component: ElectronicsComponent },
+  { path: 'home', loadComponent: () => HomeComponent },
+  { path: 'products/electronics', loadComponent: () => ElectronicsComponent },
   {
     path: 'products/electronics/mobile-phones',
-    component: MobilePhonesComponent,
+    loadComponent: () => MobilePhonesComponent,
   },
-  { path: 'products/electronics/laptops', component: LaptopsComponent },
+  {
+    path: 'products/electronics/laptops',
+    loadComponent: () => LaptopsComponent,
+  },
   {
     path: 'products/electronics/laptops/gaming',
-    component: GamingLaptopsComponent,
+    loadComponent: () => GamingLaptopsComponent,
   },
   {
     path: 'products/electronics/laptops/business',
-    component: BusinessLaptopsComponent,
+    loadComponent: () => BusinessLaptopsComponent,
   },
-  { path: 'products/clothing', component: ClothingComponent },
-  { path: 'products/clothing/men', component: MenClothingComponent },
-  { path: 'products/clothing/women', component: WomenClothingComponent },
-  { path: 'products/clothing/women/dresses', component: DressesComponent },
-  { path: 'products/clothing/women/shoes', component: ShoesComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'fee', component: AboutComponent },
+  { path: 'products/clothing', loadComponent: () => ClothingComponent },
+  { path: 'products/clothing/men', loadComponent: () => MenClothingComponent },
+  {
+    path: 'products/clothing/women',
+    loadComponent: () => WomenClothingComponent,
+  },
+  {
+    path: 'products/clothing/women/dresses',
+    loadComponent: () => DressesComponent,
+  },
+  {
+    path: 'products/clothing/women/shoes',
+    loadComponent: () => ShoesComponent,
+  },
+  { path: 'about', loadComponent: () => AboutComponent },
+  { path: 'fee', loadComponent: () => AboutComponent },
 
-  { path: 'tpb', component: AboutComponent },
+  { path: 'tpb', loadComponent: () => AboutComponent },
 
-  { path: 'cutomer-group', component: AboutComponent },
-  { path: 'connect', component: AboutComponent },
-  { path: 'config', component: AboutComponent },
-  { path: 'approve', component: AboutComponent },
+  { path: 'cutomer-group', loadComponent: () => AboutComponent },
+  { path: 'connect', loadComponent: () => AboutComponent },
+  { path: 'config', loadComponent: () => AboutComponent },
+  { path: 'approve', loadComponent: () => AboutComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
   { path: '**', redirectTo: '/home' }, // Wildcard route for a 404 page
