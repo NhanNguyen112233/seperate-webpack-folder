@@ -21,10 +21,15 @@
     </div>
 
     <ng-container *ngIf="isOpen" #option>
-        <ul class="admin-select-option"  >
+        <tpb-options
+        [items]="selectOptions"
+        [multiple]="multiple"
+        (onSelect)="handleSelect($event)"
+        ></tpb-options>
+        <!-- <ul class="admin-select-option"  >
             <li *ngFor="let item of selectOptions" (click)="handleSelect(item)">
             {{ item.label }}
             </li>
-        </ul>
+        </ul> -->
     </ng-container>
 </div>

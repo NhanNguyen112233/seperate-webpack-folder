@@ -24,6 +24,7 @@ import { AdminElementService } from '../../services/admin-element.service';
 import { IFormWrapperImpl } from '../../template/form-wrapper/form-wrapper.i';
 import { ISelectOptions } from './select.i';
 import { IAdminNgControl } from '../../constant/ng-control.i';
+import { OptionsComponent } from '../options/options.component';
 
 @Component({
   selector: 'tpb-select',
@@ -35,6 +36,7 @@ import { IAdminNgControl } from '../../constant/ng-control.i';
     MatIconModule,
     FormWrapperComponent,
     InputDirective,
+    OptionsComponent,
   ],
   providers: [AdminElementService],
   templateUrl: './select.component.html',
@@ -61,6 +63,7 @@ export class SelectComponent
 
   @Input() selectOptions: ISelectOptions[] = [];
   @Input() selectedValue = 1;
+  @Input() multiple: boolean = false;
 
   @Output() onInputChange = new EventEmitter<string>();
 
@@ -126,11 +129,17 @@ export class SelectComponent
   }
 
   handleSelect(item: ISelectOptions) {
-    this.selectedValue = item.value;
-    this.rotate();
-    this.onChange(item.value);
+    if (!this.multiple) {
+      this.selectedValue = item.value;
+      this.rotate();
+      this.onChange(item.value);
+      this.onInputChange.emit(item.value);
+      this.onTouched();
+    } else {
+      // const selectedItems = this.selectOptions.filter((i) => i.isChecked);
+      // this.onChange(selectedItems);
+    }
     this.onInputChange.emit(item.value);
-    this.onTouched();
   }
 
   public writeValue(value: any): void {

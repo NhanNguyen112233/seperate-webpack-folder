@@ -35,3 +35,7 @@
     width: toRem(15px) !important;
     height: toRem(15px) !important;
 }
+
+::ng-deep .mat-mdc-checkbox-ripple, .mdc-checkbox__ripple {
+    display: none !important;
+}

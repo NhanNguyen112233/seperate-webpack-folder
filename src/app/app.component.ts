@@ -20,10 +20,10 @@ import {
   CheckboxComponent,
   DatePickerComponent,
   InputComponent,
-  SelectComponent,
   TextAreaComponent,
 } from 'admin-core-web-libs';
 import { PreventCharactersDirective } from './directive/prevent-character';
+import { SelectComponent } from 'projects/admin-core-web-libs/src/public-api';
 // import { AdminCoreWebLibModule } from 'dist/admin-core-web-libs';
 interface MenuItem {
   label: string;
