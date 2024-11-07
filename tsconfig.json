@@ -21,10 +21,13 @@
     "module": "ES2022",
     "lib": ["ES2022", "dom"],
     "baseUrl": "./",
-    "paths": {
-      "@config/*": ["src/config/*"],
-      "@utils/*": ["src/utils/*"]
-    }
+      "paths": {
+        // "@config/*": ["src/config/*"],
+        // "@utils/*": ["src/utils/*"]
+        "@Components/*": [
+          "projects/admin-core-web-libs/src/lib/shared/components/*"
+        ]
+      }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

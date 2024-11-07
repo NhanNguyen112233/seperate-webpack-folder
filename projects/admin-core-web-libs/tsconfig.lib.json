@@ -7,7 +7,12 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": []
+    "types": [],
+    "baseUrl": "./src",
+    "paths": {
+      // "@admin-core-web-libs/*": ["src/lib/*"],
+      // "@Components/*": ["lib/shared/components/*"]
+    }
   },
   "exclude": ["**/*.spec.ts"]
 }

@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ISelectOptions } from '../select/select.i';
 import { CommonModule } from '@angular/common';
-import { CheckboxComponent } from '../component.expose';
-
+import { CheckboxComponent } from '@Components/checkbox/checkbox.component';
 @Component({
   selector: 'tpb-options',
   standalone: true,
