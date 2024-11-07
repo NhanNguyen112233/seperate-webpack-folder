@@ -3,11 +3,10 @@ import { Injectable } from '@angular/core';
 import { IAdminHttpOptions } from '../constant/https';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AdminHttpService {
-
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   get<T>(url: string, options?: IAdminHttpOptions) {
     return this.http.get<T>(url, options);
@@ -17,11 +16,11 @@ export class AdminHttpService {
     return this.http.post<T>(url, body, options);
   }
 
-  put<T>(url: string, body?:any, options?: IAdminHttpOptions) {
+  put<T>(url: string, body?: any, options?: IAdminHttpOptions) {
     return this.http.put<T>(url, body, options);
   }
 
-  patch<T>(url: string, body?:any, options?: IAdminHttpOptions) {
+  patch<T>(url: string, body?: any, options?: IAdminHttpOptions) {
     return this.http.patch<T>(url, body, options);
   }
 

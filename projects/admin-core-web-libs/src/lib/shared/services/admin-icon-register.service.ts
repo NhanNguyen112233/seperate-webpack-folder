@@ -9,7 +9,7 @@ import { ICONS } from '../constant/icon';
 export class AdminIconRegisterService {
   constructor(
     private iconRegistry: MatIconRegistry,
-    private snttitizer: DomSanitizer
+    private snttitizer: DomSanitizer,
   ) {
     this.registerIcon();
   }
@@ -19,8 +19,8 @@ export class AdminIconRegisterService {
       this.iconRegistry.addSvgIconLiteral(
         `admin-${iconName}`,
         this.snttitizer.bypassSecurityTrustHtml(
-          ICONS[iconName as keyof typeof ICONS]
-        )
+          ICONS[iconName as keyof typeof ICONS],
+        ),
       );
     });
   }

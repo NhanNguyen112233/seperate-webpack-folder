@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+import { CommonModule } from '@angular/common';
 import {
   Component,
   EventEmitter,
@@ -8,20 +8,20 @@ import {
   Self,
   ViewChild,
   ViewEncapsulation,
-} from "@angular/core";
-import { ControlValueAccessor, FormsModule, NgControl } from "@angular/forms";
-import { MatCheckbox, MatCheckboxModule } from "@angular/material/checkbox";
+} from '@angular/core';
+import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
+import { MatCheckbox, MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
-  selector: "tpb-checkbox",
+  selector: 'tpb-checkbox',
   standalone: true,
   imports: [MatCheckboxModule, FormsModule],
   encapsulation: ViewEncapsulation.Emulated,
-  templateUrl: "./checkbox.component.html",
-  styleUrl: "./checkbox.component.scss",
+  templateUrl: './checkbox.component.html',
+  styleUrl: './checkbox.component.scss',
 })
 export class CheckboxComponent implements ControlValueAccessor {
-  @ViewChild("matCheckbox", { static: true }) matCheckbox!: MatCheckbox;
+  @ViewChild('matCheckbox', { static: true }) matCheckbox!: MatCheckbox;
   @Input() indeterminate = false;
   @Input() disabled = false;
   @Input() value = false;

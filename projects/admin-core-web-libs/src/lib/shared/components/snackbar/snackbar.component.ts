@@ -19,7 +19,7 @@ export class AdminSnackbarComponent {
   constructor(
     @Inject(MAT_SNACK_BAR_DATA)
     data: IAdminSnackbar,
-    private snackBarRef: MatSnackBarRef<AdminSnackbarComponent>
+    private snackBarRef: MatSnackBarRef<AdminSnackbarComponent>,
   ) {
     this.data = data;
   }

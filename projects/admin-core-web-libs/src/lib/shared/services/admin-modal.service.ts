@@ -17,7 +17,7 @@ export class AdminModalService {
 
   open<T, D = any, R = any>(
     component: ComponentType<T>,
-    config?: MatDialogConfig<D>
+    config?: MatDialogConfig<D>,
   ): MatDialogRef<T, R> {
     return this.matDialog.open(component, config);
   }
@@ -39,7 +39,7 @@ export class AdminModalService {
   }
 
   openConfirmModal<R = any>(
-    config?: MatDialogConfig<IAdminConfimModal>
+    config?: MatDialogConfig<IAdminConfimModal>,
   ): MatDialogRef<AdminConfirmModalComponent, R> {
     return this.matDialog.open(AdminConfirmModalComponent, {
       minWidth: 452,

@@ -1,35 +1,26 @@
+<div class="admin-select" [ngStyle]="{ width: width }" #select>
+  <div class="admin-select-container" (click)="changeSelectState()">
+    <admin-form-field [isDisabled]="disabled" [errorState]="isInputInvalid()">
+      <div adminInput class="admin-select-input">
+        {{ showSelectedOption() }}
+      </div>
 
-<div class="admin-select"
-    [ngStyle]="{'width': width}"
-    #select    
->
-    <div class="admin-select-container" (click)="changeSelectState()">
-        <admin-form-field
-            [isDisabled]="disabled"
-            [errorState]="isInputInvalid()"     
-        >
-            <div 
-                adminInput
-                class="admin-select-input"> 
-                {{showSelectedOption()}}
-            </div>
-    
-            <div class="admin-select-icon"   #icon>
-                <mat-icon  svgIcon="admin-arrow-down"></mat-icon>
-            </div>      
-        </admin-form-field>
-    </div>
+      <div class="admin-select-icon" #icon>
+        <mat-icon svgIcon="admin-arrow-down"></mat-icon>
+      </div>
+    </admin-form-field>
+  </div>
 
-    <ng-container *ngIf="isOpen" #option>
-        <tpb-options
-        [items]="selectOptions"
-        [multiple]="multiple"
-        (onSelect)="handleSelect($event)"
-        ></tpb-options>
-        <!-- <ul class="admin-select-option"  >
+  <ng-container *ngIf="isOpen" #option>
+    <tpb-options
+      [items]="selectOptions"
+      [multiple]="multiple"
+      (onSelect)="handleSelect($event)"
+    ></tpb-options>
+    <!-- <ul class="admin-select-option"  >
             <li *ngFor="let item of selectOptions" (click)="handleSelect(item)">
             {{ item.label }}
             </li>
         </ul> -->
-    </ng-container>
+  </ng-container>
 </div>

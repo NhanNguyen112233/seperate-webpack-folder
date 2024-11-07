@@ -29,7 +29,10 @@ export class InputDirective implements AfterViewInit {
     },
   };
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+  ) {}
 
   ngAfterViewInit() {
     this.applyInitialStyles();
@@ -43,7 +46,7 @@ export class InputDirective implements AfterViewInit {
     this.renderer.setStyle(
       nativeElement,
       'width',
-      this.fullWidth ? '100%' : this.width
+      this.fullWidth ? '100%' : this.width,
     );
     this.renderer.setStyle(nativeElement, 'height', this.height);
 
@@ -76,7 +79,7 @@ export class InputDirective implements AfterViewInit {
       input[type=text][adminInput]::placeholder,[adminInput]::placeholder {
         color: var(--grey-2);
       }
-    `
+    `,
     );
     this.renderer.appendChild(document.head, styleElement);
   }

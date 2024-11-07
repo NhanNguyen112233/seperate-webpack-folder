@@ -16,7 +16,7 @@ export class AdminWrapperComponent implements OnInit {
   isLoading!: boolean;
   constructor(
     private adminLoadingService: AdminLoadingService,
-    private adminIcon: AdminIconRegisterService
+    private adminIcon: AdminIconRegisterService,
   ) {}
   ngOnInit(): void {
     this.adminLoadingService.loading.subscribe((loading: boolean) => {

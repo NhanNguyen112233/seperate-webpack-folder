@@ -1,11 +1,10 @@
-<admin-form-field class="txt-form-field"
-width="100%"
-[isDisabled]="disabled"
-[errorState]="isInputInvalid()"
-
+<admin-form-field
+  class="txt-form-field"
+  width="100%"
+  [isDisabled]="disabled"
+  [errorState]="isInputInvalid()"
 >
-
-<textarea
+  <textarea
     class="txt-content"
     adminInput
     [fullWidth]="true"
@@ -17,6 +16,5 @@ width="100%"
     (focus)="onFocus()"
     (blur)="onBlur()"
     [placeholder]="placeholder"
->
-</textarea>
+  ></textarea>
 </admin-form-field>

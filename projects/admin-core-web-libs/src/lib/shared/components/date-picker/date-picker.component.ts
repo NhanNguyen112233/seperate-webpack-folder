@@ -87,7 +87,7 @@ export class DatePickerComponent
   constructor(
     private adapter: DateAdapter<Date>,
     private adminRegistryIconService: AdminIconRegisterService,
-    @Self() @Optional() private ngControl: NgControl
+    @Self() @Optional() private ngControl: NgControl,
   ) {
     if (this.ngControl) {
       this.ngControl.valueAccessor = this;

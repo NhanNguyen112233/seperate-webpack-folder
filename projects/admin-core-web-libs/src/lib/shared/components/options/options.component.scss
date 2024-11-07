@@ -1,50 +1,50 @@
 @import "../../../styles.scss";
 
-.admin-select-option{
-    position: absolute;   
-    top:toRem(40px);
-    left: 0;
-    right: 0;
-    max-height: toRem(200px);
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: var(--white-1);
-    z-index: 3;
-    box-shadow: toRem(0px) toRem(7px) toRem(12px) rgba(0, 0, 0, 0.12);
+.admin-select-option {
+  position: absolute;
+  top: toRem(40px);
+  left: 0;
+  right: 0;
+  max-height: toRem(200px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--white-1);
+  z-index: 3;
+  box-shadow: toRem(0px) toRem(7px) toRem(12px) rgba(0, 0, 0, 0.12);
+  border-radius: toRem(4px);
+
+  &::-webkit-scrollbar {
+    width: toRem(4px);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 0 toRem(4px) toRem(4px) 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
     border-radius: toRem(4px);
+    border: 3px solid var(--grey-5);
+  }
 
-    &::-webkit-scrollbar {
-        width: toRem(4px);
-      }
-    
-      &::-webkit-scrollbar-track {
-        background: transparent;
-        border-radius:0 toRem(4px) toRem(4px) 0;
-      }
-    
-      &::-webkit-scrollbar-thumb {
-        background-color: transparent;
-        border-radius: toRem(4px);
-        border: 3px solid var(--grey-5);
-      }
-    
-      &::-webkit-scrollbar-thumb:hover {
-        background-color: transparent
-      }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: transparent;
+  }
 
-    &>li{
-        padding: 0 toRem(16px);
-        box-sizing: border-box;
-        min-height: toRem(36px);
-        line-height: toRem(36px);
-        
-        &:hover{
-            background-color: var(--purple-13);
-            cursor: pointer;
-        }
+  & > li {
+    padding: 0 toRem(16px);
+    box-sizing: border-box;
+    min-height: toRem(36px);
+    line-height: toRem(36px);
+
+    &:hover {
+      background-color: var(--purple-13);
+      cursor: pointer;
     }
+  }
 
-    &-title{
-        display: inline-flex;
-    }
+  &-title {
+    display: inline-flex;
+  }
 }

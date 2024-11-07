@@ -61,14 +61,14 @@ export class SnackbarService {
 
   showCustom<T, D extends IAdminSnackbar = any>(
     config?: MatSnackBarConfig<D>,
-    component?: ComponentType<T>
+    component?: ComponentType<T>,
   ): MatSnackBarRef<T> {
     return this.createSnackbarFromComponent<T, D>(config, component);
   }
 
   private createSnackbarFromComponent<T, D extends IAdminSnackbar = any>(
     config?: MatSnackBarConfig<D>,
-    component?: ComponentType<T>
+    component?: ComponentType<T>,
   ) {
     const Component = component || AdminSnackbarComponent;
     return this.snackBar.openFromComponent(Component as ComponentType<T>, {

@@ -1,17 +1,12 @@
-<div  
-[ngStyle]="{'width': width, 'height': 'auto'}"
-[ngClass]="customClass()"
->
-    <ng-content></ng-content>
+<div [ngStyle]="{ width: width, height: 'auto' }" [ngClass]="customClass()">
+  <ng-content></ng-content>
 
-    <ng-container *ngIf="isDisabled">
-        <div class="form-field-disabled">
-        
-        </div>
-    </ng-container>
+  <ng-container *ngIf="isDisabled">
+    <div class="form-field-disabled"></div>
+  </ng-container>
 </div>
 <ng-container *ngIf="errorState">
-    <div class="form-field-error-text">
-        {{errorMessage}}
-    </div>
+  <div class="form-field-error-text">
+    {{ errorMessage }}
+  </div>
 </ng-container>

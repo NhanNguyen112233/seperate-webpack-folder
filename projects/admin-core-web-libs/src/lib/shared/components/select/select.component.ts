@@ -88,7 +88,7 @@ export class SelectComponent
   constructor(
     private adminElementService: AdminElementService,
     private elementRef: ElementRef,
-    @Self() @Optional() private ngControl: NgControl
+    @Self() @Optional() private ngControl: NgControl,
   ) {
     if (this.ngControl) {
       this.ngControl.valueAccessor = this;
@@ -123,7 +123,7 @@ export class SelectComponent
 
   showSelectedOption() {
     const foundedItem = this.selectOptions.find(
-      (i) => i.value === this.selectedValue
+      (i) => i.value === this.selectedValue,
     );
     return foundedItem ? foundedItem.label : '';
   }

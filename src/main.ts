@@ -7,5 +7,5 @@ import {
 } from '@angular/common/http';
 
 bootstrapApplication(AppComponent, appConfig).catch((err) =>
-  console.error(err)
+  console.error(err),
 );

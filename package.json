@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run pre-start && ng serve",
+    "build": "npm run pre-start && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "package": "ng build  admin-core-web-libs && npm run pack-dist",
-    "core-lib-setup": "npm install admin-core-web-libs@file:dist/admin-core-web-libs/admin-core-web-libs-0.0.1.tgz"
+    "clean-spec": "rimraf \"**/*.spec.ts\"",
+    "pre-start": "npx prettier . --write",
+    "pack-dist": "cd ./dist/admin-core-web-libs && npm pack",
+    "package": "npm run pre-start && ng build  admin-core-web-libs && npm run pack-dist",
+    "clean-lock": "rimraf package-lock.json",
+    "core-lib-setup": "npm run clean-lock && npm install admin-core-web-libs@file:dist/admin-core-web-libs/admin-core-web-libs-0.0.1.tgz --force"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +43,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^18.2.0",
+    "prettier": "3.3.3",
     "typescript": "~5.5.2"
   }
 }

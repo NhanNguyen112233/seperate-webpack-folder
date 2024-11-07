@@ -1,27 +1,25 @@
-<admin-form-field 
-[width]="width" 
-[height]="height"
-[isDisabled]="disabled"
-[errorState]="isInputInvalid()"
-[errorMessage]="errorMessage"
+<admin-form-field
+  [width]="width"
+  [height]="height"
+  [isDisabled]="disabled"
+  [errorState]="isInputInvalid()"
+  [errorMessage]="errorMessage"
 >
-    <input 
+  <input
     [(ngModel)]="value"
     [min]="minDate"
     [max]="maxDate"
     [matDatepicker]="picker"
     (ngModelChange)="onChangeValue($event)"
-    type="text" 
+    type="text"
     adminInput
     placeholder="--/--/----"
-    />
-    
-    <div class="dp-picker" (click)="picker.open()">
+  />
 
-        <mat-icon class="dp-picker-icon"  svgIcon="admin-calendar"></mat-icon>
-         <!-- Use the correct icon name -->
+  <div class="dp-picker" (click)="picker.open()">
+    <mat-icon class="dp-picker-icon" svgIcon="admin-calendar"></mat-icon>
+    <!-- Use the correct icon name -->
+  </div>
 
-    </div>
-         
-    <mat-datepicker #picker></mat-datepicker>
+  <mat-datepicker #picker></mat-datepicker>
 </admin-form-field>

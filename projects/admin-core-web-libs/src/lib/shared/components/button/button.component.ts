@@ -27,14 +27,12 @@ export class ButtonComponent {
   @Output() onClick = new EventEmitter<void>();
 
   handleClick($event: MouseEvent): void {
-    
     if (this.disabled) {
       $event.preventDefault();
       $event.stopImmediatePropagation();
       return;
     }
     this.onClick.emit();
-
   }
 
   customClass(): string {
@@ -42,9 +40,7 @@ export class ButtonComponent {
       return this.disabled ? `btn-disabled ${this.class}` : this.class;
     } else {
       // btn_${this.appearance}-disabled
-      return this.disabled
-        ? `btn-disabled`
-        : `btn-${this.appearance}`;
+      return this.disabled ? `btn-disabled` : `btn-${this.appearance}`;
     }
   }
 }

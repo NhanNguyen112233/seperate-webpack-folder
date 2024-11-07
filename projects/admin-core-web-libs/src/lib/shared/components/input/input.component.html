@@ -1,35 +1,35 @@
 <admin-form-field
-[isDisabled]="isDisabled"
-[errorState]="isInputInvalid()"
-[errorMessage]="errorMessage"
+  [isDisabled]="isDisabled"
+  [errorState]="isInputInvalid()"
+  [errorMessage]="errorMessage"
 >
-    <ng-container *ngIf="displayCustomContent('prefix')">
-       <ng-content select="[prefix]"></ng-content>
-       
-        <ng-template #prefix>
-            <!-- Default prefix content can go here if needed -->
-        </ng-template>
-    </ng-container>
+  <ng-container *ngIf="displayCustomContent('prefix')">
+    <ng-content select="[prefix]"></ng-content>
 
-    <input 
-        [(ngModel)]="value"
-        (ngModelChange)="onChangeValue($event)"
-        adminInput
-        [fullWidth]="true"
-        [placeholder]="placeholder"
-        [minLength]="minLength"
-        [maxLength]="maxLength"
-        [required]="required"
-        (focus)="onFocus()"
-        (blur)="onBlur()"
-        [type]="type"
-    />
+    <ng-template #prefix>
+      <!-- Default prefix content can go here if needed -->
+    </ng-template>
+  </ng-container>
 
-    <ng-container *ngIf="displayCustomContent('suffix')">
-       <ng-content  select="[suffix]"></ng-content>
+  <input
+    [(ngModel)]="value"
+    (ngModelChange)="onChangeValue($event)"
+    adminInput
+    [fullWidth]="true"
+    [placeholder]="placeholder"
+    [minLength]="minLength"
+    [maxLength]="maxLength"
+    [required]="required"
+    (focus)="onFocus()"
+    (blur)="onBlur()"
+    [type]="type"
+  />
 
-       <ng-template #suffix>
-        <!-- Default prefix content can go here if needed -->
-      </ng-template>
-    </ng-container>
+  <ng-container *ngIf="displayCustomContent('suffix')">
+    <ng-content select="[suffix]"></ng-content>
+
+    <ng-template #suffix>
+      <!-- Default prefix content can go here if needed -->
+    </ng-template>
+  </ng-container>
 </admin-form-field>

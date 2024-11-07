@@ -1,79 +1,74 @@
-
-
 <admin-main-layout>
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 
-
-    <tpb-button appearance="secondary">secondary</tpb-button>
-<div>
+  <tpb-button appearance="secondary">secondary</tpb-button>
+  <div>
     <tpb-date-picker
-    [value]="noReactive.date"
-    (onInputChange)="onInputChange($event)"
+      [value]="noReactive.date"
+      (onInputChange)="onInputChange($event)"
     ></tpb-date-picker>
-</div>
-<div>
-    <tpb-input 
-    appPreventCharacters
-    [customContent]="'suffix'"
-    [value]="noReactive.input"
-    (onInputChange)="onInputChange($event)"
-    [required]="true"
-    placeholder="Tất cả">
-    <div prefix>
-        prefix
-    </div>
-    <div suffix>
-        suffix
-    </div>
+  </div>
+  <div>
+    <tpb-input
+      appPreventCharacters
+      [customContent]="'suffix'"
+      [value]="noReactive.input"
+      (onInputChange)="onInputChange($event)"
+      [required]="true"
+      placeholder="Tất cả"
+    >
+      <div prefix>prefix</div>
+      <div suffix>suffix</div>
     </tpb-input>
-</div>
+  </div>
 
-<div>
-    <tpb-checkbox/>
-</div>
+  <div>
+    <tpb-checkbox />
+  </div>
 
-<div>
-    <tpb-select [width]="'252px'"
-    (onInputChange)="onInputChange($event)"
-    value="1"
-    [selectOptions]="selectOption"
+  <div>
+    <tpb-select
+      [width]="'252px'"
+      (onInputChange)="onInputChange($event)"
+      value="1"
+      [selectOptions]="selectOption"
     />
-</div>
-<div>
-    <tpb-input placeholder="Tất cả"/>
-</div>
-<div>
-<form [formGroup]="form" >
-
-    <div>
-        <tpb-input 
-            appPreventCharacters
-            [errorMessage]="handleError('name')"
-            formControlName="name"
-            placeholder="Tất cả"
+  </div>
+  <div>
+    <tpb-input placeholder="Tất cả" />
+  </div>
+  <div>
+    <form [formGroup]="form">
+      <div>
+        <tpb-input
+          appPreventCharacters
+          [errorMessage]="handleError('name')"
+          formControlName="name"
+          placeholder="Tất cả"
         />
-        
+
         <tpb-text-area
-            appPreventCharacters
-            formControlName="des"
-            placeholder="2"
+          appPreventCharacters
+          formControlName="des"
+          placeholder="2"
         />
 
         <tpb-select
-            [multiple]="true"
-            [selectOptions]="selectOption"
-            formControlName="select"
+          [multiple]="true"
+          [selectOptions]="selectOption"
+          formControlName="select"
         />
 
         <tpb-date-picker
-            formControlName="date"
-            errorMessage="Input không hợp lệ"
+          formControlName="date"
+          errorMessage="Input không hợp lệ"
         />
 
-    <tpb-button 
-    type="submit"  (onClick)="onSubmit()" appearance="primary">submit</tpb-button>
-    </div>
-</form>
-<div>nhan dep trai</div>
-</div>
+        <tpb-button type="submit" (onClick)="onSubmit()" appearance="primary"
+          >submit</tpb-button
+        >
+      </div>
+    </form>
+    <div>nhan dep trai</div>
+  </div>
 </admin-main-layout>

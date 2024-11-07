@@ -1,10 +1,10 @@
-<ul class="admin-select-option"  >
-    <li *ngFor="let item of items" (click)="handleSelect(item)">
+<ul class="admin-select-option">
+  <li *ngFor="let item of items" (click)="handleSelect(item)">
     <span class="admin-select-option-title">
-        <ng-container *ngIf="multiple">
-           <tpb-checkbox [value]="isItemSelected()"></tpb-checkbox>
-        </ng-container>
-        <span>{{ item.label }}</span>
+      <ng-container *ngIf="multiple">
+        <tpb-checkbox [value]="isItemSelected()"></tpb-checkbox>
+      </ng-container>
+      <span>{{ item.label }}</span>
     </span>
-    </li>
+  </li>
 </ul>

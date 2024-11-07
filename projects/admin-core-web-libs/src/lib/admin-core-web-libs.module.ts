@@ -40,9 +40,9 @@ export class AdminCoreWebLibModule {
       providers: [
         AdminIconRegisterService,
         {
-          provide:'env',
-          useValue:environment
-        }
+          provide: 'env',
+          useValue: environment,
+        },
         // Add any services that need to be singleton here
       ],
     };

@@ -40,7 +40,7 @@ export class AdminMenuComponent implements OnInit {
     } else {
       this.filteredMenuItems = this.filterItems(
         this.menuItems,
-        this.searchQuery.toLowerCase()
+        this.searchQuery.toLowerCase(),
       );
     }
   }
@@ -63,7 +63,7 @@ export class AdminMenuComponent implements OnInit {
       .filter(
         (item) =>
           item.label.toLowerCase().includes(query) ||
-          (item.children && item.children.length > 0)
+          (item.children && item.children.length > 0),
       );
   }
 
